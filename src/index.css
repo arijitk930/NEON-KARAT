@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @keyframes scroll {
   0% {
     transform: translateX(100%);
@@ -14,7 +10,6 @@
     transform: translateX(-100%);
   }
 }
-
 .marquee {
   display: flex;
   animation: scroll 20s linear infinite; /* Adjust duration as needed */
