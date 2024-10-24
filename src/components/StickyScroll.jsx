@@ -52,7 +52,7 @@ const StickyScrollReveal = ({ theme = 'dark', heading, content }) => {
   }, []);
 
   return (
-    <div className={`relative min-h-screen ${themeClasses[theme].background}`}>
+    <div className={`relative min-h-screen ${themeClasses[theme].background} pt-10`}>
       <div className="max-w-5xl mx-auto px-4">
         <div className={`sticky top-4 ${themeClasses[theme].background} ml-16`}>
           <h1 className={`${themeClasses[theme].highlight} font-bold text-8xl`}>{heading}</h1>
@@ -61,14 +61,14 @@ const StickyScrollReveal = ({ theme = 'dark', heading, content }) => {
             {/* Left side content */}
             <div className="space-y-6"> {/* Adjust space between items */}
               {content.map((item, index) => (
-                <div className='w-full' key={index}>
+                <div
+                  className={`w-full text-4xl font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title} ${activeCard === index ? 'opacity-100' : 'opacity-40'}`} key={index}>
                   <button
-                    className={`text-4xl font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title} ${activeCard === index ? 'opacity-100' : 'opacity-30'}`}
                     onClick={() => setActiveCard(index)} // Clicking the title expands it
                   >
                     {item.title}
                   </button>
-                  {activeCard !== index && (<hr className={` ${themeClasses[theme].hr} w-full shadow-xl rounded-xl`} />)}
+                  {activeCard !== index && (<hr className={` mt-2 ${themeClasses[theme].hr} w-full shadow-xl rounded-xl`} />)}
                   {activeCard === index && (
                     <div>
                       <h2 className={`text-3xl font-semibold mb-4 ${themeClasses[theme].title}`}>
