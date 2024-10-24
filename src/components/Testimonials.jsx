@@ -75,7 +75,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <Slider {...settings} className="my-8">
+    <Slider {...settings} className="my-8 max-w-screen-xl">
       {cardData.map((card, index) => (
         <div key={index} className="px-2">
           <Card {...card} />

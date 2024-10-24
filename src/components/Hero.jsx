@@ -2,14 +2,14 @@ import React, { useRef, useEffect } from 'react';
 
 // Array of portrait cards (replace with actual images)
 const cards = [
-  { img: 'https://placehold.co/300x700', name: 'Card 1' },
-  { img: 'https://placehold.co/300x700', name: 'Card 2' },
-  { img: 'https://placehold.co/300x700', name: 'Card 3' },
-  { img: 'https://placehold.co/300x700', name: 'Card 4' },
-  { img: 'https://placehold.co/300x700', name: 'Card 5' },
-  { img: 'https://placehold.co/300x700', name: 'Card 5' },
-  { img: 'https://placehold.co/300x700', name: 'Card 5' },
-  { img: 'https://placehold.co/300x700', name: 'Card 5' }
+  { img: 'https://placehold.co/400x700', name: 'Card 1' },
+  { img: 'https://placehold.co/400x700', name: 'Card 2' },
+  { img: 'https://placehold.co/400x700', name: 'Card 3' },
+  { img: 'https://placehold.co/400x700', name: 'Card 4' },
+  { img: 'https://placehold.co/400x700', name: 'Card 5' },
+  { img: 'https://placehold.co/400x700', name: 'Card 5' },
+  { img: 'https://placehold.co/400x700', name: 'Card 5' },
+  { img: 'https://placehold.co/400x700', name: 'Card 5' }
 ];
 
 const Hero = () => {
