@@ -1,7 +1,7 @@
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import React from 'react';
-import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import Slider from "react-slick";
 
 function Card({ image, title, subtitle, description, socialIcon }) {
   return (
@@ -12,7 +12,7 @@ function Card({ image, title, subtitle, description, socialIcon }) {
       <p className="mt-2 text-sm text-center text-gray-600">{description}</p>
     </div>
   );
-};
+}
 
 const Testimonials = () => {
   const settings = {
@@ -44,38 +44,38 @@ const Testimonials = () => {
   // Example card data
   const cardData = [
     {
-      image: 'https://placehold.co/500x500',
-      title: 'NasDaily',
-      subtitle: '21M FOLLOWERS ON FACEBOOK',
+      image: "https://placehold.co/500x500",
+      title: "NasDaily",
+      subtitle: "21M FOLLOWERS ON FACEBOOK",
       description: '"I have over $3M in revenue per year..."',
-      socialIcon: 'path-to-facebook-icon.svg',
+      socialIcon: "path-to-facebook-icon.svg",
     },
     {
-      image: 'https://placehold.co/500x500',
-      title: 'RealEngineering',
-      subtitle: '4.1M FOLLOWERS ON YOUTUBE',
+      image: "https://placehold.co/500x500",
+      title: "RealEngineering",
+      subtitle: "4.1M FOLLOWERS ON YOUTUBE",
       description: '"Despite running a top YouTube channel..."',
-      socialIcon: 'path-to-youtube-icon.svg',
+      socialIcon: "path-to-youtube-icon.svg",
     },
     {
-        image: 'https://placehold.co/500x500',
-        title: 'NasDaily',
-        subtitle: '21M FOLLOWERS ON FACEBOOK',
-        description: '"I have over $3M in revenue per year..."',
-        socialIcon: 'path-to-facebook-icon.svg',
-      },
-      {
-        image: 'https://placehold.co/500x500',
-        title: 'RealEngineering',
-        subtitle: '4.1M FOLLOWERS ON YOUTUBE',
-        description: '"Despite running a top YouTube channel..."',
-        socialIcon: 'path-to-youtube-icon.svg',
-      },
+      image: "https://placehold.co/500x500",
+      title: "NasDaily",
+      subtitle: "21M FOLLOWERS ON FACEBOOK",
+      description: '"I have over $3M in revenue per year..."',
+      socialIcon: "path-to-facebook-icon.svg",
+    },
+    {
+      image: "https://placehold.co/500x500",
+      title: "RealEngineering",
+      subtitle: "4.1M FOLLOWERS ON YOUTUBE",
+      description: '"Despite running a top YouTube channel..."',
+      socialIcon: "path-to-youtube-icon.svg",
+    },
     // Add more cards as needed
   ];
 
   return (
-    <Slider {...settings} className="my-8 max-w-screen-xl">
+    <Slider {...settings} className="my-8 ">
       {cardData.map((card, index) => (
         <div key={index} className="px-2">
           <Card {...card} />
