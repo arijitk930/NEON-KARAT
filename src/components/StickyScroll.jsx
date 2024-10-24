@@ -56,9 +56,13 @@ const StickyScrollReveal = ({ theme = "dark", heading, content }) => {
 
   return (
     <div className={`relative min-h-screen ${themeClasses[theme].background}`}>
-      <div className="max-w-5xl mx-auto px-4">
-        <div className={`sticky top-4 ${themeClasses[theme].background} ml-16`}>
-          <h1 className={`${themeClasses[theme].highlight} font-bold text-8xl`}>{heading}</h1>
+      <div className="max-w-5xl mx-auto px-4 lg:px-8">
+        <div className={`sticky top-4 ${themeClasses[theme].background}`}>
+          <h1
+            className={`${themeClasses[theme].highlight} font-bold text-4xl md:text-6xl lg:text-8xl text-center md:text-left`}
+          >
+            {heading}
+          </h1>
           <br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left side content */}
@@ -66,14 +70,30 @@ const StickyScrollReveal = ({ theme = "dark", heading, content }) => {
               {" "}
               {/* Adjust space between items */}
               {content.map((item, index) => (
-                <div className='w-full' key={index}>
+                <div
+                  className="w-full transition-all duration-500"
+                  key={index}
+                  style={{
+                    opacity: activeCard === index ? 1 : 0.5,
+                    transform:
+                      activeCard === index
+                        ? "translateY(0)"
+                        : "translateY(10px)",
+                  }}
+                >
                   <button
-                    className={`text-4xl font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title} ${activeCard === index ? 'opacity-100' : 'opacity-30'}`}
+                    className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 transition-opacity duration-300 ${
+                      themeClasses[theme].title
+                    } ${activeCard === index ? "opacity-100" : "opacity-30"}`}
                     onClick={() => setActiveCard(index)} // Clicking the title expands it
                   >
                     {item.title}
                   </button>
-                  {activeCard !== index && (<hr className={` ${themeClasses[theme].hr} w-full shadow-xl rounded-xl`} />)}
+                  {activeCard !== index && (
+                    <hr
+                      className={` ${themeClasses[theme].hr} w-full shadow-xl rounded-xl`}
+                    />
+                  )}
                   {activeCard === index && (
                     <div
                       className="transition-all duration-500"
