@@ -28,12 +28,7 @@
   cursor: pointer;
 }
 
-body{
-  background: linear-gradient(135deg, #e5ebfa, #f6d2f6, #f6ced5,rgb(249, 249, 208)) ;
-
-}
-
-.custom-gradient {
-  
-  
+body {
+  background: linear-gradient(135deg, #fdf5e6, #e1e7fb, #f5d5f7);
+  background-size: cover;
 }

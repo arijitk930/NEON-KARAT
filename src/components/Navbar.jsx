@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import icons
+import { Button } from "@material-tailwind/react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-pink-200 to-pink-300 p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
+    <nav className=" p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
       {/* Logo */}
       <div className="text-2xl font-extrabold text-black">Karat</div>
 
@@ -38,11 +39,14 @@ const Navbar = () => {
 
       {/* Action buttons */}
       <div className="hidden lg:flex space-x-4">
-        <button className="px-4 py-2 bg-white text-[#1D0CE5] rounded hover:bg-blue-100 transition-all duration-200 ease-in-out">
+        {/* Log In Button */}
+        <Button variant="text" className="text-black text-lg normal-case">
+          Log in
+        </Button>
+
+        {/* Get Started Button */}
+        <button className="bg-white shadow-lg hover:shadow-xl text-black rounded-xl px-6 py-2 normal-case text-lg">
           Get Started
-        </button>
-        <button className="px-4 py-2 bg-transparent border border-black text-black rounded hover:bg-black hover:text-white transition-all duration-200 ease-in-out">
-          Log In
         </button>
       </div>
     </nav>
