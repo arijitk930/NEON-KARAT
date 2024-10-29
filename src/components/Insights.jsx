@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Ensure this is correct
+import { useState } from "react"; // Ensure this is correct
 
 const data = [
   {
