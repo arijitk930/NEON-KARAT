@@ -1,11 +1,11 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
 import "./App.css";
 import Testimonials from "./components/Testimonials";
-import StickyScrollReveal from "./components/StickyScroll";
+
+import Insights from "./components/Insights";
 
 function App() {
   const content1 = [
@@ -91,12 +91,7 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
-      <StickyScrollReveal
-        theme="light"
-        heading="HOW WE HELP"
-        content={content1}
-      />
-      <StickyScrollReveal heading="Credit Card" content={content1} />
+      <Insights />
       <Testimonials />
       <Footer />
     </div>
