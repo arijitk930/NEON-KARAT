@@ -92,7 +92,7 @@ export default function Insights() {
                 <div
                   key={index}
                   className={`transition-all duration-500 p-4 rounded-lg ${
-                    activeCard === index ? "bg-gray-100 shadow-lg" : ""
+                    activeCard === index ? "bg-gray-100 " : ""
                   }`}
                   style={{
                     opacity: activeCard === index ? 1 : 0.7,
@@ -163,6 +163,13 @@ export default function Insights() {
             >
               {data[activeCard].visualization}
             </div>
+          </div>
+
+          {/* Get Started Button */}
+          <div className="flex justify-start mt-12">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8  text-lg transition duration-300">
+              GET STARTED
+            </button>
           </div>
         </div>
       </div>
