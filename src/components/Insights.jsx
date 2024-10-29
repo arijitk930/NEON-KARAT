@@ -91,9 +91,8 @@ export default function Insights() {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className={`transition-all duration-500 p-4 rounded-lg ${
-                    activeCard === index ? "bg-gray-100 " : ""
-                  }`}
+                  className={`transition-all duration-500 p-4 rounded-lg ${activeCard === index ? "bg-gray-100 " : ""
+                    }`}
                   style={{
                     opacity: activeCard === index ? 1 : 0.7,
                     transform:
@@ -103,9 +102,8 @@ export default function Insights() {
                   }}
                 >
                   <button
-                    className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 transition-opacity duration-300 ${
-                      themeClasses[theme].title
-                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
+                    className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title
+                      } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                     onClick={() => setActiveCard(index)}
                   >
                     {item.title}
@@ -151,6 +149,9 @@ export default function Insights() {
                   )}
                 </div>
               ))}
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-8  text-lg transition duration-300 w-full">
+                  GET STARTED
+                </button>
             </div>
 
             {/* Right side visualization */}
@@ -166,11 +167,6 @@ export default function Insights() {
           </div>
 
           {/* Get Started Button */}
-          <div className="flex justify-start mt-12">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8  text-lg transition duration-300">
-              GET STARTED
-            </button>
-          </div>
         </div>
       </div>
     </div>
