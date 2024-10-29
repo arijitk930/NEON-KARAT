@@ -71,7 +71,7 @@ function App() {
       <Hero />
       <Features />
       <Insights />
-      <CreditCard/>
+      <CreditCard />
       <Testimonials />
       <Footer />
     </div>
