@@ -79,21 +79,23 @@ export default function Insights() {
 
   return (
     <div className={`relative min-h-screen ${themeClasses[theme].background}`}>
-      <div className="max-w-5xl mx-auto px-4 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-10">
         <div className={`sticky top-4 ${themeClasses[theme].background}`}>
-          <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl text-center md:text-left text-blue-600">
+          <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl text-center md:text-left text-blue-600 mb-8">
             HOW WE HELP
           </h1>
-          <br />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Left side content */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               {data.map((item, index) => (
                 <div
-                  className="w-full transition-all duration-500"
                   key={index}
+                  className={`transition-all duration-500 p-4 rounded-lg ${
+                    activeCard === index ? "bg-gray-100 shadow-lg" : ""
+                  }`}
                   style={{
-                    opacity: activeCard === index ? 1 : 0.5,
+                    opacity: activeCard === index ? 1 : 0.7,
                     transform:
                       activeCard === index
                         ? "translateY(0)"
@@ -103,19 +105,21 @@ export default function Insights() {
                   <button
                     className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 transition-opacity duration-300 ${
                       themeClasses[theme].title
-                    } ${activeCard === index ? "opacity-100" : "opacity-30"}`}
+                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                     onClick={() => setActiveCard(index)}
                   >
                     {item.title}
                   </button>
+
                   {activeCard !== index && (
                     <hr
-                      className={` ${themeClasses[theme].hr} w-full shadow-xl rounded-xl`}
+                      className={` ${themeClasses[theme].hr} w-full shadow-lg rounded-xl`}
                     />
                   )}
+
                   {activeCard === index && (
                     <div
-                      className="transition-all duration-500"
+                      className="transition-all duration-500 mt-4"
                       style={{
                         opacity: 1,
                         transform: "translateY(10px)",
@@ -126,19 +130,22 @@ export default function Insights() {
                       >
                         {item.subtitle}
                       </h2>
+
                       <div className="text-base md:text-lg lg:text-2xl">
                         <span className={themeClasses[theme].highlight}>
                           {item.highlighted}
                         </span>
                         <span>{item.normal}</span>
                       </div>
+
                       <p
-                        className={`mt-2 text-sm md:text-base lg:text-lg ${themeClasses[theme].text}`}
+                        className={`mt-4 text-sm md:text-base lg:text-lg ${themeClasses[theme].text}`}
                       >
                         {item.description}
                       </p>
+
                       <hr
-                        className={`my-6 ${themeClasses[theme].hr} shadow-xl rounded-xl`}
+                        className={`my-6 ${themeClasses[theme].hr} shadow-lg rounded-xl`}
                       />
                     </div>
                   )}
@@ -148,10 +155,10 @@ export default function Insights() {
 
             {/* Right side visualization */}
             <div
-              className="transition-all duration-500 transform m-6"
+              className="transition-all duration-500 transform mx-auto w-full max-w-md lg:max-w-lg"
               style={{
                 opacity: 1,
-                transform: activeCard !== null ? "scale(1)" : "scale(0.9)",
+                transform: activeCard !== null ? "scale(1)" : "scale(0.95)",
               }}
             >
               {data[activeCard].visualization}
