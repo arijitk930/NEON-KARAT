@@ -1,7 +1,6 @@
-import React from 'react';
-import { TrendingUp, ChevronRight, ArrowUp } from 'lucide-react';
-import { User, MessageSquare } from 'lucide-react';
-
+import React from "react";
+import { TrendingUp, ChevronRight, ArrowUp } from "lucide-react";
+import { User, MessageSquare } from "lucide-react";
 
 const NotificationCard = ({ type, username, time, message, userImage }) => {
   return (
@@ -13,21 +12,21 @@ const NotificationCard = ({ type, username, time, message, userImage }) => {
   );
 };
 
-const sampleData= {
+const sampleData = {
   currentSubscribers: 1200,
   subscriberGrowth: 24,
   postLikes: 3200,
   monthlyData: [
-    { month: 'Dec', subscriptions: 25000, tips: 2000 },
-    { month: 'Jan', subscriptions: 15000, tips: 1500 },
-    { month: 'Feb', subscriptions: 12000, tips: 1000 },
-    { month: 'Mar', subscriptions: 18000, tips: 1200 },
-    { month: 'Apr', subscriptions: 16000, tips: 1800 },
-    { month: 'May', subscriptions: 5000, tips: 500 },
+    { month: "Dec", subscriptions: 25000, tips: 2000 },
+    { month: "Jan", subscriptions: 15000, tips: 1500 },
+    { month: "Feb", subscriptions: 12000, tips: 1000 },
+    { month: "Mar", subscriptions: 18000, tips: 1200 },
+    { month: "Apr", subscriptions: 16000, tips: 1800 },
+    { month: "May", subscriptions: 5000, tips: 500 },
   ],
 };
 
-const CreatorAnalytics=() => {
+const CreatorAnalytics = () => {
   const maxValue = Math.max(
     ...sampleData.monthlyData.map((d) => d.subscriptions + d.tips)
   );
@@ -51,15 +50,20 @@ const CreatorAnalytics=() => {
             <TrendingUp className="w-5 h-5 text-purple-600" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-gray-900">Creator analytics</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Creator analytics
+            </h2>
             <p className="text-sm text-gray-500">
-              Keep track of how your account is doing and how much you'll earn this month.
+              Keep track of how your account is doing and how much you all earn
+              this month.
             </p>
           </div>
         </div>
 
         <div className="mb-8">
-          <h3 className="text-sm font-medium text-gray-500 mb-2">Current subscribers</h3>
+          <h3 className="text-sm font-medium text-gray-500 mb-2">
+            Current subscribers
+          </h3>
           <div className="flex items-center gap-3">
             <span className="text-3xl font-bold text-gray-900">
               {sampleData.currentSubscribers.toLocaleString()}k
@@ -87,10 +91,15 @@ const CreatorAnalytics=() => {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-sm font-medium text-gray-500 mb-4">Monthly income</h3>
+          <h3 className="text-sm font-medium text-gray-500 mb-4">
+            Monthly income
+          </h3>
           <div className="h-48 flex items-end gap-2">
             {sampleData.monthlyData.map((data, index) => (
-              <div key={index} className="flex-1 flex flex-col items-stretch gap-1">
+              <div
+                key={index}
+                className="flex-1 flex flex-col items-stretch gap-1"
+              >
                 <div className="flex-1 flex flex-col justify-end gap-1">
                   <div
                     className="bg-green-400 rounded-sm"
@@ -105,7 +114,9 @@ const CreatorAnalytics=() => {
                     }}
                   />
                 </div>
-                <span className="text-xs text-gray-500 text-center">{data.month}</span>
+                <span className="text-xs text-gray-500 text-center">
+                  {data.month}
+                </span>
               </div>
             ))}
           </div>
@@ -123,9 +134,12 @@ const CreatorAnalytics=() => {
 
         <button className="w-full flex items-center justify-between p-4 bg-gray-50 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors">
           <div>
-            <h3 className="text-base font-medium text-gray-900">Monetization settings</h3>
+            <h3 className="text-base font-medium text-gray-900">
+              Monetization settings
+            </h3>
             <p className="text-sm text-gray-500">
-              Connect a bank account to set a subscription price or start accepting tips.
+              Connect a bank account to set a subscription price or start
+              accepting tips.
             </p>
           </div>
           <ChevronRight className="w-5 h-5" />
