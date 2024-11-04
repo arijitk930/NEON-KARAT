@@ -4,14 +4,14 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div>
-          <h2 className="text-xl font-bold">Karat</h2>
+          <h2 className="text-xl font-bold">VanityCard</h2>
           <p className="text-sm mt-4">
-            Karat is a financial technology company and not a bank. The Karat
-            Visa® Business Credit Card is issued through Cross River Bank,
+            VanityCard is a financial technology company and not a bank. The
+            Karat Visa® Business Credit Card is issued through Cross River Bank,
             Member FDIC and pursuant to a license by Visa USA...
           </p>
         </div>
-        
+
         {/* About Section */}
         <div>
           <h3 className="font-bold mb-4">About</h3>
@@ -28,7 +28,7 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:underline">
-                Why Karat
+                Why VanityCard
               </a>
             </li>
           </ul>
