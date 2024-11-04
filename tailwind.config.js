@@ -8,6 +8,9 @@ export default withMT({
       fontFamily: {
         primaryBold: ["Druk Wide Bold Bold"],
       },
+      lineHeight: {
+        tight: "1.2",
+      },
     },
   },
   plugins: [],
