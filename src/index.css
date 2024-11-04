@@ -50,3 +50,10 @@
 .animate-scroll-right {
   animation: scroll-right 30s linear infinite;
 }
+@font-face {
+  font-family: "Druk Wide Bold Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Druk Wide Bold Bold"),
+    url("./assets/druk-wide-bold-webfont/DrukWideBold.woff") format("woff");
+}
