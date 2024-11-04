@@ -76,7 +76,7 @@ export default function Insights() {
   const [theme] = useState("light"); // Initialize with 'light'
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen mt-20">
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-10">
         <div className="sticky top-4">
           <h1 className="font-primaryBold text-4xl md:text-6xl lg:text-[4rem] text-center md:text-left text-blue-600 mb-8">
