@@ -16,7 +16,7 @@ function Card({ image, title, subtitle, description, socialIcon }) {
 
 const Testimonials = () => {
   const settings = {
-    dots: true,
+    arrows:false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -75,7 +75,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <Slider {...settings} className="my-8 w-3/4">
+    <Slider {...settings} className="my-8">
       {cardData.map((card, index) => (
         <div key={index} className="px-2">
           <Card {...card} />

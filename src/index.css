@@ -44,11 +44,11 @@
 }
 
 .animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 6s linear infinite;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 6s linear infinite;
 }
 @font-face {
   font-family: "Druk Wide Bold Bold";

@@ -28,8 +28,11 @@ p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-5
 
       {/* Menu links */}
       <ul
-        className={`lg:flex lg:space-x-8 absolute lg:static w-full lg:w-auto left-0 top-16 lg:top-auto lg:bg-transparent lg:flex-row flex-col items-center lg:items-start lg:space-y-0 space-y-6 p-6 lg:p-0 transition-all duration-500 ease-in-out ${
-          menuOpen ? "block" : "hidden lg:block"
+        className={`lg:flex lg:space-x-8 absolute lg:static w-full lg:w-auto left-0 top-16 lg:top-auto 
+          lg:bg-transparent lg:flex-row 
+          flex-col items-center lg:items-start lg:space-y-0 space-y-6 p-6 lg:p-0 
+          transition-all duration-500 ease-in-out ${
+          menuOpen ? "block" : "hidden lg:block" 
         }`}
       >
         <Link
