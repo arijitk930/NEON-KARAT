@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className=" p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
       {/* Logo */}
-      <div className="text-2xl font-extrabold text-black">Karat</div>
+      <div className="text-2xl font-extrabold text-black">VanityCard</div>
 
       {/* Hamburger menu for mobile */}
       <div className="lg:hidden">
