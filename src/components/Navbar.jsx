@@ -6,7 +6,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className=" p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
+    <nav className=" p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out bg-deep-orange-50 drop-shadow-md">
       {/* Logo */}
       <div className="text-2xl font-extrabold text-black">VanityCard</div>
 

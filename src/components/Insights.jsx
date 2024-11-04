@@ -76,9 +76,9 @@ export default function Insights() {
   const [theme] = useState("light"); // Initialize with 'light'
 
   return (
-    <div className={`relative min-h-screen ${themeClasses[theme].background}`}>
+    <div className="relative min-h-screen">
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-10">
-        <div className={`sticky top-4 ${themeClasses[theme].background}`}>
+        <div className="sticky top-4">
           <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl text-center md:text-left text-blue-600 mb-8">
             HOW WE HELP
           </h1>
@@ -90,9 +90,7 @@ export default function Insights() {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className={`transition-all duration-500 p-4 rounded-lg ${
-                    activeCard === index ? "bg-gray-100" : ""
-                  }`}
+                  className="transition-all duration-500 p-4 rounded-lg "
                   style={{
                     opacity: activeCard === index ? 1 : 0.7,
                     transform:
