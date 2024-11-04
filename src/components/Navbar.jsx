@@ -37,13 +37,14 @@ p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-5
           className="text-black hover:text-blue-600 transition-colors cursor-pointer"
         >
           Insights
-        </Link>
+        </Link><br />
         <Link
           to="/credit"
           className="text-black hover:text-blue-600 transition-colors cursor-pointer"
         >
           Credit Card
         </Link>
+        <br />
         <Link
           to="/"
           className="text-black hover:text-blue-600 transition-colors cursor-pointer"

@@ -7,7 +7,7 @@ const Footer = () => {
           <h2 className="text-xl font-bold">VanityCard</h2>
           <p className="text-sm mt-4">
             VanityCard is a financial technology company and not a bank. The
-            Karat Visa® Business Credit Card is issued through Cross River Bank,
+            VanityCard Visa® Business Credit Card is issued through Cross River Bank,
             Member FDIC and pursuant to a license by Visa USA...
           </p>
         </div>
@@ -81,7 +81,7 @@ const Footer = () => {
 
       {/* Legal Section */}
       <div className="max-w-7xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 text-sm border-t border-gray-700 pt-4">
-        <p>© 2024 Karat. All rights reserved.</p>
+        <p>© 2024 VanityCard. All rights reserved.</p>
         <div className="flex space-x-6 justify-end">
           <a href="#" className="hover:underline">
             Support
