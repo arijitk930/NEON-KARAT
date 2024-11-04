@@ -85,7 +85,7 @@ const Navbar = () => {
       </ul>
 
       {/* Action buttons */}
-      <div className="hidden lg:flex space-x-4">
+      <div className="hidden lg:flex space-x-4 lg:items-center">
         {/* Log In Button */}
         <Link to="/" className="text-black text-lg normal-case">
           Log in

@@ -4,8 +4,8 @@ function ComparisonComponent() {
     return (
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between p-8 md:p-16 space-y-8 md:space-y-0 bg-white text-gray-800">
             {/* Left Side Text Content */}
-            <div className="md:w-1/3 text-center md:text-left space-y-4">
-                <h1 className="text-5xl font-bold leading-tight">SEE HOW YOU COMPARE</h1>
+            <div className="md:w-1/3 text-center md:text-left space-y-4 ">
+                <h1 className="text-5xl font-bold leading-tight font-primaryBold">SEE HOW YOU COMPARE</h1>
                 <p className="text-lg">
                     Learn how you <span className="font-semibold">compare to other creators</span> similar to you. See what you're doing better and where you can improve.
                 </p>

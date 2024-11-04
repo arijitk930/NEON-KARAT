@@ -97,11 +97,13 @@ const CreditCard = ({ theme = "dark" }) => {
     }, []);
 
     return (
+    
         <div className={`relative min-h-screen ${themeClasses[theme].background}`}>
+            
             <div className="max-w-5xl mx-auto px-4 lg:px-8">
                 <div className={`sticky top-4`}>
                     <h1
-                        className={`${themeClasses[theme].highlight} pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left`}
+                        className={`${themeClasses[theme].highlight} font-primaryBold pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left`}
                     >
                         Credit Card
                     </h1>

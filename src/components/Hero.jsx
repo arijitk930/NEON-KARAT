@@ -56,7 +56,7 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 w-2/3 left-10">
-        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-md font-primaryBold">
+        <h1 className="text-3xl md:text-4xl font-bold drop-shadow-md font-primaryBold">
           WE HELP CREATORS WITH MONEY
         </h1>
         <div className="mt-6 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
@@ -70,7 +70,7 @@ const Hero = () => {
             placeholder="Enter your social handle"
             className="px-4 py-2 rounded-md bg-white/80 text-black placeholder-gray-700 focus:outline-none"
           />
-          <button className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md transition">
+          <button className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md transition text-sm">
             Get Started
           </button>
         </div>

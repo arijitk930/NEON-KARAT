@@ -1,14 +1,14 @@
 function InsightsHero() {
   return (
     <div className="container mx-auto px-6 py-20">
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-[80px] leading-none font-black tracking-tight mb-12">
+      <div className="max-w-6xl mx-auto text-center ">
+        <h1 className="font-primaryBold text-[50px] leading-none font-black tracking-tight mb-12">
           FIND OUT HOW MUCH
           <br />
           YOU CAN{" "}
-          <span className="inline-flex items-center">
+          <span className="inline-flex items-center align-middle">
             <img
-              className="h-40"
+              className="h-28 mt-2" // Adjust the height and margin-top to better align with text
               src="https://cdn.prod.website-files.com/64319e85443cd280068e5fff/662b7f17bdef4adb6e8f7a08_Karat_Cash_300%20px.gif"
               alt="dollar sign"
             />
@@ -17,6 +17,7 @@ function InsightsHero() {
           <br />
           AS A CREATOR
         </h1>
+
 
         <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
           VanityCard Insights uses our real financial and social data to help
