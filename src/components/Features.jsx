@@ -15,7 +15,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="text-[#1D0CE5] py-20 bg-gradient-to-b from-blue-50 to-blue-100">
+    <section className="text-[#1D0CE5] py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold">Our Features</h2>

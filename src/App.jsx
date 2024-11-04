@@ -1,12 +1,7 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
 import Footer from "./components/Footer";
 import "./App.css";
-import Testimonials from "./components/Testimonials";
-import CreditCard from "./components/CreditCard";
-
-import Insights from "./components/Insights";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const content1 = [
@@ -68,11 +63,7 @@ function App() {
   return (
     <div className="App min-h-screen bg-pastel-gradient bg-cover">
       <Navbar />
-      <Hero />
-      <Features />
-      <Insights />
-      <CreditCard/>
-      <Testimonials />
+      <Outlet />
       <Footer />
     </div>
   );

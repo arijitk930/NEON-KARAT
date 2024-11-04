@@ -11,7 +11,7 @@ const Footer = () => {
             Member FDIC and pursuant to a license by Visa USA...
           </p>
         </div>
-
+        
         {/* About Section */}
         <div>
           <h3 className="font-bold mb-4">About</h3>
