@@ -79,14 +79,16 @@ export default function Insights() {
     <div className="relative min-h-screen">
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-10">
         <div className="sticky top-4">
-          <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl text-center md:text-left text-blue-600 mb-8">
+          <h1 className="font-primaryBold text-4xl md:text-6xl lg:text-[4rem] text-center md:text-left text-blue-600 mb-8">
             HOW WE HELP
           </h1>
-          <h2 className="font-bold text-3xl mb-6">Insights</h2>
+          <h2 className="font-bold text-[40px] mb-6 font-primaryBold">
+            INSIGHTS
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Left side content */}
-            <div className="space-y-8">
+            <div className="space-y-3">
               {data.map((item, index) => (
                 <div
                   key={index}
@@ -100,7 +102,7 @@ export default function Insights() {
                   }}
                 >
                   <button
-                    className={`text-left text-2xl md:text-3xl lg:text-4xl font-bold mb-2 transition-opacity duration-300 ${
+                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
                       themeClasses[theme].title
                     } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                     onClick={() => setActiveCard(index)}
