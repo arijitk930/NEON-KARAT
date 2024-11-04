@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import FollowUs from "./components/FollowUs";
+import BottomSection from "./components/BottomSection";
 
 function App() {
   const content1 = [
@@ -64,6 +66,8 @@ function App() {
     <div className="App min-h-screen bg-pastel-gradient bg-cover">
       <Navbar />
       <Outlet />
+      <BottomSection />
+      <FollowUs />
       <Footer />
     </div>
   );
