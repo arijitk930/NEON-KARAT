@@ -57,3 +57,12 @@
   src: local("Druk Wide Bold Bold"),
     url("./assets/druk-wide-bold-webfont/DrukWideBold.woff") format("woff");
 }
+.clip-path-pie-25 {
+  clip-path: polygon(50% 0%, 100% 0%, 50% 50%);
+}
+.clip-path-pie-50 {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 50%);
+}
+.clip-path-pie-75 {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%);
+}

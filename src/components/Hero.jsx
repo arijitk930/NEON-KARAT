@@ -14,7 +14,7 @@ const cards = [
 
 const Hero = () => {
   const sliderRef = useRef(null);
-
+  
   useEffect(() => {
     const slider = sliderRef.current;
     let animationFrame;
