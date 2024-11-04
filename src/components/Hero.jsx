@@ -63,14 +63,17 @@ const Hero = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-4 py-2 rounded-md bg-white/80 text-black placeholder-gray-700 focus:outline-none"
+            className="px-4 py-2 rounded-md  bg-brown-100 text-black placeholder-gray-700 focus:outline-none"
           />
           <input
             type="text"
             placeholder="Enter your social handle"
-            className="px-4 py-2 rounded-md bg-white/80 text-black placeholder-gray-700 focus:outline-none"
+            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none"
           />
-          <button className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md transition text-sm">
+          <button
+            className="px-6 py-2 bg-brown-400 hover:bg-brown-600
+          hover:border-gray-800 text-white rounded-md  transition text-sm"
+          >
             Get Started
           </button>
         </div>
