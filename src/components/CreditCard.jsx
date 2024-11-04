@@ -167,7 +167,7 @@ const CreditCard = ({ theme = "dark" }) => {
                             </div>
                             <br />
                             <p className="w-full text-white text-sm">
-                            Karat is a financial technology company and not a bank. The Karat Visa®️ Business Credit Card is issued by by Cross River Bank, Member FDIC, and pursuant to a license from Visa️ USA
+                            VanityCard is a financial technology company and not a bank. The VanityCard Visa®️ Business Credit Card is issued by by Cross River Bank, Member FDIC, and pursuant to a license from Visa️ USA
                             </p>
                         </div>
 

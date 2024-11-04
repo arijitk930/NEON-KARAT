@@ -34,7 +34,7 @@ const Hero = () => {
     };
   }, []);
   return (
-    <div className="relative h-screen custom-gradient flex items-center justify-center overflow-hidden">
+    <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden">
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
         <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
@@ -55,7 +55,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 w-2/3 left-10">
         <h1 className="text-4xl md:text-6xl font-bold drop-shadow-md font-primaryBold">
           WE HELP CREATORS WITH MONEY
         </h1>

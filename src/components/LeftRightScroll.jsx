@@ -1,21 +1,11 @@
-const LeftRightScroll = () => {
-  const topVideos = [
+const topVideos = [
     "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
-    "https://images.unsplash.com/photo-1459749411175-04bf5292ceea",
-    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4",
-    "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3",
-    "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b",
-    "https://images.unsplash.com/photo-1506157786151-b8491531f063",
   ];
 
   const bottomVideos = [
     "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
-    "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec",
-    "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b",
-    "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f",
-    "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3",
-    "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4",
   ];
+const LeftRightScroll = () => {
   return (
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">

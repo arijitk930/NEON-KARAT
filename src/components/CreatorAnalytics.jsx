@@ -1,6 +1,7 @@
-import React from "react";
-import { TrendingUp, ChevronRight, ArrowUp } from "lucide-react";
-import { User, MessageSquare } from "lucide-react";
+import React from 'react';
+import { TrendingUp, ChevronRight, ArrowUp } from 'lucide-react';
+import { User, MessageSquare } from 'lucide-react';
+import img from '../assets/histogram.png'
 
 const NotificationCard = ({ type, username, time, message, userImage }) => {
   return (
@@ -91,34 +92,31 @@ const CreatorAnalytics = () => {
         </div>
 
         <div className="mb-8">
-          <h3 className="text-sm font-medium text-gray-500 mb-4">
-            Monthly income
-          </h3>
-          <div className="h-48 flex items-end gap-2">
-            {sampleData.monthlyData.map((data, index) => (
-              <div
-                key={index}
-                className="flex-1 flex flex-col items-stretch gap-1"
-              >
+          <h3 className="text-sm font-medium text-gray-500 mb-4">Monthly income</h3>
+          <div className="h-48 flex items-end gap-2 mt-6">
+            {/* {sampleData.monthlyData.map((data, index) => (
+              <div key={index} className="flex-1 flex flex-col items-stretch gap-1">
                 <div className="flex-1 flex flex-col justify-end gap-1">
                   <div
                     className="bg-green-400 rounded-sm"
                     style={{
                       height: `${(data.subscriptions / maxValue) * 100}%`,
                     }}
-                  />
+                  ><hr /></div>
                   <div
                     className="bg-pink-400 rounded-sm"
                     style={{
                       height: `${(data.tips / maxValue) * 100}%`,
                     }}
-                  />
+                  ><hr /></div>
+                    
                 </div>
                 <span className="text-xs text-gray-500 text-center">
                   {data.month}
                 </span>
               </div>
-            ))}
+            ))} */}
+            <img src={img} alt="" />
           </div>
           <div className="flex gap-6 mt-4 justify-center">
             <div className="flex items-center gap-2">
