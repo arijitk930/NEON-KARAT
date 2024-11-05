@@ -1,11 +1,10 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Features from '../components/Features'
-import Insights from '../components/Insights'
-import CreditCard from '../components/CreditCard'
-import CreatorAnalytics from '../components/CreatorAnalytics'
-import Testimonials from '../components/Testimonials'
-import LeftRightScroll from '../components/LeftRightScroll'
+import Hero from "../components/Hero";
+import Features from "../components/Features";
+import Insights from "../components/Insights";
+import CreditCard from "../components/CreditCard";
+import CreatorAnalytics from "../components/CreatorAnalytics";
+import Testimonials from "../components/Testimonials";
+import LeftRightScroll from "../components/LeftRightScroll";
 
 function Home() {
   return (
@@ -13,12 +12,12 @@ function Home() {
       <Hero />
       <Features />
       <Insights />
-      <CreditCard/>
-      <CreatorAnalytics/>
-      <LeftRightScroll/>
+      <CreditCard />
+      <CreatorAnalytics />
+      <LeftRightScroll />
       <Testimonials />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

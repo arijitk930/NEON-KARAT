@@ -16,7 +16,7 @@ function Card({ image, title, subtitle, description, socialIcon }) {
 
 const Testimonials = () => {
   const settings = {
-    arrows:false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

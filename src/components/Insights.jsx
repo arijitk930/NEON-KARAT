@@ -79,7 +79,7 @@ export default function Insights() {
     <div className="relative min-h-screen mt-20">
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-10">
         <div className="sticky top-4">
-          <h1 className="font-primaryBold text-4xl md:text-6xl lg:text-[4rem] text-center md:text-left text-blue-600 mb-8">
+          <h1 className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] font-normal leading-tight sm:leading-[1.1] font-primaryBold pb-7 text-[#8E24AA]">
             HOW WE HELP
           </h1>
           <h2 className="font-bold text-[40px] mb-6 font-primaryBold">
@@ -140,7 +140,7 @@ export default function Insights() {
                   )}
                 </div>
               ))}
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-12 w-full rounded-full text-lg transition duration-300">
+              <button className="bg-brown-400 hover:bg-brown-600 text-white font-bold h-12 w-full rounded-full text-lg transition duration-300">
                 GET STARTED
               </button>
             </div>

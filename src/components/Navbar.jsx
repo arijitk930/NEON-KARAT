@@ -9,7 +9,10 @@ const Navbar = () => {
     <nav className="backdrop-blur-xl bg-white/30 border border-white/20 p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
       <div className="flex items-baseline space-x-10">
         {/* Logo */}
-        <Link to="/" className="text-4xl font-primaryBold text-black">
+        <Link
+          to="/"
+          className="text-4xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+        >
           VanityCard
         </Link>
 
@@ -18,7 +21,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/insights"
-              className="text-black hover:text-blue-600 hover: transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="text-black font-lato hover:text-brown-600 hover: transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brown-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Insights
             </Link>
@@ -26,7 +29,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/credit"
-              className="text-black hover:text-blue-600 transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="text-black font-lato hover:text-brown-600 transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brown-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Credit Card
             </Link>
@@ -34,7 +37,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="text-black hover:text-blue-600 transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="text-black font-lato hover:text-brown-600 transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-brown-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Socials
             </Link>
@@ -87,14 +90,14 @@ const Navbar = () => {
       {/* Action buttons */}
       <div className="hidden lg:flex space-x-4 lg:items-center">
         {/* Log In Button */}
-        <Link to="/" className="text-black text-lg normal-case">
+        <Link to="/" className="text-black text-lg normal-case font-lato">
           Log in
         </Link>
 
         {/* Get Started Button */}
         <Link
           to="/"
-          className="bg-white shadow-lg hover:shadow-xl text-black rounded-xl px-6 py-2 normal-case text-lg"
+          className="bg-white font-lato shadow-lg hover:shadow-xl text-white rounded-xl px-6 py-2 normal-case text-lg bg-gradient-to-r from-purple-500 to-blue-500 bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-300 ease-in-out"
         >
           Get Started
         </Link>

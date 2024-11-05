@@ -16,7 +16,7 @@ const Features = () => {
     <section className="text-[#1D0CE5]  ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold font-primaryBold">
+          <h2 className="text-4xl font-extrabold font-primaryBold text-[#8E24AA]">
             OUR FEATURES
           </h2>
           <p className="text-lg text-gray-600 mt-4">
@@ -27,7 +27,7 @@ const Features = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="p-8 border border-gray-200 rounded-lg text-center shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="p-8 border border-gray-200 rounded-lg text-center shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
             >
               <div className="text-5xl mb-6 text-[#1D0CE5]">{feature.icon}</div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 font-primaryBold">

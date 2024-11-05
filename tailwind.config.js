@@ -7,6 +7,7 @@ export default withMT({
     extend: {
       fontFamily: {
         primaryBold: ["Druk Wide Bold Bold"],
+        lato: ["Lato", "sans-serif"],
       },
       lineHeight: {
         tight: "1.2",
