@@ -5,7 +5,7 @@ import Slider from "react-slick";
 
 function Card({ image, title, subtitle, description, socialIcon }) {
   return (
-    <div className="p-2 bg-white rounded-lg shadow-lg">
+    <div className="p-2 bg-white rounded-lg shadow-blue-gray-400 shadow-xl my-4">
       <img src={image} alt={title} className="w-24 h-24 mx-auto rounded-full" />
       <h3 className="mt-4 text-lg font-bold text-center">{title}</h3>
       <h4 className="mt-2 text-center text-purple-500">{subtitle}</h4>
