@@ -29,8 +29,10 @@
 }
 
 body {
-  background: linear-gradient(135deg, #fdf5e6, #e1e7fb, #f5d5f7);
-  background-size: cover;
+  background-image: url("./assets/62c490351ee26e719721025d_gradient-bg.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .video-scroll {
