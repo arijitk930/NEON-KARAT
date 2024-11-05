@@ -55,11 +55,11 @@ const content = [
 const CreditCard = ({ theme = "dark" }) => {
   const themeClasses = {
     dark: {
-      background: "bg-gray-900",
+      background: "bg-gradient-to-r from-purple-600 via-pink-600 to-red-600",
       title: "text-white",
       progressBarBg: "bg-gray-700",
       progressBarFill: "bg-blue-500",
-      highlight: "text-blue-400",
+      highlight: "text-blue-200",
       cardBg: "bg-gray-800",
       cardShadow: "shadow-xl",
       hr: "bg-gray-600",
