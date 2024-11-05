@@ -1,9 +1,25 @@
 const topVideos = [
-    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/dyz5reebdq74vxqu3xsq.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/w9zdu4vxqb7iebv8ysyk.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/uh2lf5mwf3a2bnkikdb2.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/txinllbh67wqveducklr.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/sfcstmoh7ktuj9jv6tgw.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/jqt4b3nngljgriddy4rd.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/atje7dv8momajo6mv2yi.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/rnpmsk4bxnaeqqamilwb.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/bmyfleo4lbvaxbxnqkx1.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/ud7rlpbuowwdbbg8lpxw.jpg',
   ];
 
   const bottomVideos = [
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/ytewgx6h9t9fnopke2vb.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/nakbxaymwvqyebkqgkr0.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/chq9ds9zd39gzxwagveb.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/fa5cpnenc0oaml4ddbdc.jpg',
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg',
   ];
 const LeftRightScroll = () => {
   return (
@@ -11,7 +27,7 @@ const LeftRightScroll = () => {
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-scroll-left gap-4 py-4">
           {[...Array(2)].map((_, i) => (
-            <div key={`top-${i}`} className="flex gap-4 shrink-0">
+            <div key={`top-${i}`} className="flex gap-10 shrink-0">
               {topVideos.map((url, index) => (
                 <img
                   key={`top-${i}-${index}`}
@@ -25,14 +41,14 @@ const LeftRightScroll = () => {
         </div>
       </div>
 
-      <h1 className="text-6xl font-bold tracking-tighter bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+      <h1 className="text-6xl font-bold font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
         VanityCard IN THE WILD
       </h1>
 
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-scroll-right gap-4 py-4">
           {[...Array(2)].map((_, i) => (
-            <div key={`bottom-${i}`} className="flex gap-4 shrink-0">
+            <div key={`bottom-${i}`} className="flex gap-10 shrink-0">
               {bottomVideos.map((url, index) => (
                 <img
                   key={`bottom-${i}-${index}`}
