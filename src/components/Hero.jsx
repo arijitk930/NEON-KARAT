@@ -1,58 +1,26 @@
-import { useRef, useEffect } from "react";
 import { images } from "./data";
-
-// Array of portrait cards (replace with actual images)
-const cards = [
-  { img: "https://placehold.co/400x700", name: "Card 1" },
-  { img: "https://placehold.co/400x700", name: "Card 2" },
-  { img: "https://placehold.co/400x700", name: "Card 3" },
-  { img: "https://placehold.co/400x700", name: "Card 4" },
-  { img: "https://placehold.co/400x700", name: "Card 5" },
-  { img: "https://placehold.co/400x700", name: "Card 5" },
-  { img: "https://placehold.co/400x700", name: "Card 5" },
-  { img: "https://placehold.co/400x700", name: "Card 5" },
-];
+import Marquee from "react-fast-marquee";
 
 const Hero = () => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let animationFrame;
-
-    const startMarquee = () => {
-      slider.scrollLeft += 1; // Adjust speed
-      if (slider.scrollLeft >= slider.scrollWidth / 2) {
-        slider.scrollLeft = 0; // Loop back
-      }
-      animationFrame = requestAnimationFrame(startMarquee);
-    };
-
-    startMarquee();
-
-    return () => {
-      cancelAnimationFrame(animationFrame); // Cleanup on unmount
-    };
-  }, []);
   return (
     <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden px-48">
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
-        <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
-          {images.concat(images).map((card, index) => (
+        <Marquee speed={80} gradient={true}>
+          {images.map((card, index) => (
             <div
               key={index}
-              className="w-full max-w-xsp-4 rounded-lg transform transition-transform duration-300 hover:scale-105"
-              style={{ minWidth: "250px" }}
+              className="rounded-lg transform transition-transform duration-300 hover:scale-105 mx-6"
+              style={{ minWidth: "350px", maxWidth: "350px" }} // Increase card size
             >
               <img
                 src={card}
                 alt="default"
-                className="w-48 h-full object-cover rounded-lg shadow-lg"
+                className="w-full h-[500px] object-cover rounded-lg shadow-lg" // Adjust image height here
               />
             </div>
           ))}
-        </div>
+        </Marquee>
       </div>
 
       {/* Hero Content */}
