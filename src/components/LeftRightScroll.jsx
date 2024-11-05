@@ -25,7 +25,7 @@ const LeftRightScroll = () => {
   return (
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-scroll-left gap-4 py-4">
+        <div className="flex animate-scroll-left gap-4 py-4" style={{ willChange: 'transform' }}>
           {[...Array(2)].map((_, i) => (
             <div key={`top-${i}`} className="flex gap-10 shrink-0">
               {topVideos.map((url, index) => (
@@ -34,6 +34,7 @@ const LeftRightScroll = () => {
                   src={url}
                   className="h-48 w-72 object-cover rounded-lg"
                   alt={`Concert ${index + 1}`}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -46,7 +47,7 @@ const LeftRightScroll = () => {
       </h1>
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-scroll-right gap-4 py-4">
+        <div className="flex animate-scroll-right gap-4 py-4" style={{ willChange: 'transform' }}>
           {[...Array(2)].map((_, i) => (
             <div key={`bottom-${i}`} className="flex gap-10 shrink-0">
               {bottomVideos.map((url, index) => (
@@ -55,6 +56,7 @@ const LeftRightScroll = () => {
                   src={url}
                   className="h-48 w-72 object-cover rounded-lg"
                   alt={`Concert ${index + 7}`}
+                  loading="lazy"
                 />
               ))}
             </div>

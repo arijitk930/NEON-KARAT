@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { images } from "./data";
 
 // Array of portrait cards (replace with actual images)
 const cards = [
@@ -38,15 +39,15 @@ const Hero = () => {
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
         <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
-          {cards.concat(cards).map((card, index) => (
+          {images.concat(images).map((card, index) => (
             <div
               key={index}
               className="w-full max-w-xsp-4 rounded-lg transform transition-transform duration-300 hover:scale-105"
               style={{ minWidth: "250px" }}
             >
               <img
-                src={card.img}
-                alt={card.name}
+                src={card}
+                alt="default"
                 className="w-48 h-full object-cover rounded-lg shadow-lg"
               />
             </div>
