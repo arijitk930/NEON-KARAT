@@ -15,7 +15,7 @@ const cards = [
 
 const Hero = () => {
   const sliderRef = useRef(null);
-  
+
   useEffect(() => {
     const slider = sliderRef.current;
     let animationFrame;
@@ -35,7 +35,7 @@ const Hero = () => {
     };
   }, []);
   return (
-    <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden">
+    <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden px-48">
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
         <div ref={sliderRef} className="flex overflow-hidden whitespace-nowrap">
@@ -64,19 +64,15 @@ const Hero = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-4 py-2 rounded-md  bg-brown-100 text-black placeholder-gray-700 focus:outline-none"
+            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
           />
+
           <input
             type="text"
             placeholder="Enter your social handle"
-            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none"
+            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
           />
-          <button
-            className="px-6 py-2 bg-brown-400 hover:bg-brown-600
-          hover:border-gray-800 text-white rounded-md  transition text-sm"
-          >
-            Get Started
-          </button>
+          <button className="button rounded-md font-bold">Get Started</button>
         </div>
       </div>
     </div>

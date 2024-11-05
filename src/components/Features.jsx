@@ -16,7 +16,7 @@ const Features = () => {
     <section className="text-[#1D0CE5]  ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold font-primaryBold text-[#8E24AA]">
+          <h2 className="text-4xl font-extrabold font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
             OUR FEATURES
           </h2>
           <p className="text-lg text-gray-600 mt-4">
