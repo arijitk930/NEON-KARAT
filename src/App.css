@@ -38,7 +38,8 @@ body {
 }
 
 .video-scroll {
-  background-image: linear-gradient(135deg, #edd19e, #9baff1, #ed95f3);
+  background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
+  background-size: cover;
 }
 .button {
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");

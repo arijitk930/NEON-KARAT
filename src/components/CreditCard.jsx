@@ -21,7 +21,7 @@ const content = [
     normal: "Fast ",
     highlighted: " live chats",
     description:
-      "You deserve a partner that keeps up with you – chat with our certified financial planner and our Concierge team whenever.",
+      "You deserve a partner that keeps up with you - chat with our certified financial planner and our Concierge team whenever.",
     visualization: (
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
