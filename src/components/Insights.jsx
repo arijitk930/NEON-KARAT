@@ -10,7 +10,7 @@ const data = [
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
           <img
-            src={`https://placehold.co/500x500`}
+            src={`http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/nakbxaymwvqyebkqgkr0.jpg`}
             alt={`Profile`}
             className="w-full h-full object-cover"
           />
@@ -27,7 +27,7 @@ const data = [
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
           <img
-            src={`https://placehold.co/600x400/000000/FFFFFF.png`}
+            src={`http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg`}
             alt={`Profile`}
             className="w-full h-full object-cover"
           />
@@ -42,11 +42,12 @@ const data = [
       "Get detailed insights into your revenue streams and audience engagement metrics.",
     visualization: (
       <div className="relative">
-        <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
-          <img
-            src={`https://placehold.co/500x500`}
-            alt={`Profile`}
-            className="w-full h-full object-cover"
+        <div className="w-full h-96 rounded-sm border-white overflow-hidden">
+        <video
+            src="http://res.cloudinary.com/deus3nlcx/video/upload/v1730804739/videos/ck16jt8vvloutihoqwtb.mp4"
+            autoPlay
+            loop
+            className="h-96"
           />
         </div>
       </div>
@@ -102,9 +103,8 @@ export default function Insights() {
                   }}
                 >
                   <button
-                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
-                      themeClasses[theme].title
-                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
+                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title
+                      } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                     onClick={() => setActiveCard(index)}
                   >
                     <span>{item.normal}</span>

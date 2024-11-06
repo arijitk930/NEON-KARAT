@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 const topVideos = [
@@ -24,12 +25,19 @@ const bottomVideos = [
   'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg',
 ];
 const LeftRightScroll = () => {
+  const [tImg,setTimg]=useState([])
+  const [bImg,setBimg]=useState([])
+
+  useEffect(()=>{
+    setBimg(bottomVideos)
+    setTimg(topVideos)
+  })
   return (
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
           <Marquee speed={80} className="w-full">
-            {topVideos.map((url, index) => (
+            {tImg.map((url, index) => (
               <img
                 key={`top-${index}`}
                 src={url}
@@ -49,7 +57,7 @@ const LeftRightScroll = () => {
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
           <Marquee speed={80} direction="right" className="w-full" >
-            {bottomVideos.map((url, index) => (
+            {bImg.map((url, index) => (
               <img
                 key={`bottom-${index}`}
                 src={url}
