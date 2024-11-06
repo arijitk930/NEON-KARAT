@@ -27,7 +27,7 @@ const Features = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="p-8 border border-gray-200 rounded-lg text-center shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
+              className="p-8 border border-gray-300 rounded-lg text-center shadow-lg bg-white transition-transform transform hover:scale-105 hover:shadow-xl cursor-pointer"
             >
               <div className="text-5xl mb-6 text-[#1D0CE5]">{feature.icon}</div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 font-primaryBold">

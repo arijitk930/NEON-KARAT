@@ -1,27 +1,34 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import icons
 import { Link } from "react-router-dom";
+import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="backdrop-blur-xl bg-white/30 border border-white/20 p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
-      <div className="flex items-baseline space-x-10">
+      <div className="flex items-center space-x-8">
         {/* Logo */}
         <Link
           to="/"
-          className="text-4xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+          className="flex items-center space-x-0 text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
         >
-          VanityCard
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-10 w-15 transform scale-150"
+          />
+          {/* Scaling the image */}
+          <span>anityCard</span>
         </Link>
 
         {/* Menu links */}
-        <ul className="hidden lg:flex space-x-4">
+        <ul className="hidden lg:flex space-x-6 items-center">
           <li>
             <Link
               to="/insights"
-              className="text-black font-lato hover:text-[#ac73db] hover: transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="text-black font-lato hover:text-[#ac73db] transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Insights
             </Link>
@@ -29,15 +36,15 @@ const Navbar = () => {
           <li>
             <Link
               to="/credit"
-              className="text-black font-lato hover:text-[#ac73db] transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="text-black font-lato hover:text-[#ac73db] transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Credit Card
             </Link>
           </li>
           <li>
             <Link
-              to="/"
-              className="text-black font-lato hover:text-[#ac73db] transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              to="/socials"
+              className="text-black font-lato hover:text-[#ac73db] transition-colors cursor-pointer relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#ac73db] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Socials
             </Link>
@@ -79,7 +86,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/socials"
             className="block px-6 py-2 text-black hover:text-blue-600 transition-colors cursor-pointer"
           >
             Socials
@@ -88,7 +95,7 @@ const Navbar = () => {
       </ul>
 
       {/* Action buttons */}
-      <div className="hidden lg:flex space-x-4 lg:items-center">
+      <div className="hidden lg:flex space-x-4 items-center">
         {/* Log In Button */}
         <Link to="/" className="text-black text-lg normal-case font-bold">
           Log in
@@ -97,7 +104,7 @@ const Navbar = () => {
         {/* Get Started Button */}
         <Link
           to="/"
-          className="button transform hover:scale-105 hover:bg-opacity-80 transition duration-300"
+          className="button px-4 py-4  rounded-xl  transform hover:scale-105 transition duration-300"
         >
           Get Started
         </Link>

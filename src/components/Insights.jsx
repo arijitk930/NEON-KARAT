@@ -43,7 +43,7 @@ const data = [
     visualization: (
       <div className="relative">
         <div className="w-full h-96 rounded-sm border-white overflow-hidden">
-        <video
+          <video
             src="http://res.cloudinary.com/deus3nlcx/video/upload/v1730804739/videos/ck16jt8vvloutihoqwtb.mp4"
             autoPlay
             loop
@@ -103,8 +103,9 @@ export default function Insights() {
                   }}
                 >
                   <button
-                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${themeClasses[theme].title
-                      } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
+                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
+                      themeClasses[theme].title
+                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                     onClick={() => setActiveCard(index)}
                   >
                     <span>{item.normal}</span>
@@ -140,7 +141,7 @@ export default function Insights() {
                   )}
                 </div>
               ))}
-              <button className="button-insights text-black  h-12 w-full rounded-md text-lg transition duration-300 bg-gray-200 hover:bg-gray-300 hover:text-purple-700 hover:border-purple-700 font-bold">
+              <button className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300   hover:border-2 hover:border-purple-700 font-bold">
                 GET STARTED
               </button>
             </div>
