@@ -12,14 +12,13 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center space-x-0 text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+          className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
         >
           <img
             src={logo}
             alt="Logo"
-            className="h-10 w-15 transform scale-150"
+            className="h-10 w-15 transform scale-150 -mr-2" // Added negative margin to reduce spacing
           />
-          {/* Scaling the image */}
           <span>anityCard</span>
         </Link>
 
