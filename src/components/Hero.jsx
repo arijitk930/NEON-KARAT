@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
-const images = ['http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/pfgobyaztel9xqzppcbr.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/mrzfkiprwbbjc9dnjtf4.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/ytewgx6h9t9fnopke2vb.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/nakbxaymwvqyebkqgkr0.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/chq9ds9zd39gzxwagveb.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/eh4alxdqdqlqgtl51atu.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ltean7wjzhrobm3ii2ak.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ca5jrqtn7hyabavg68yg.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/kfc5u2twe6nyobdmqh9q.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/y2fkklj1mi9ic8vswnqt.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/fa5cpnenc0oaml4ddbdc.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg',]
+const images = [
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/pfgobyaztel9xqzppcbr.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/mrzfkiprwbbjc9dnjtf4.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/ytewgx6h9t9fnopke2vb.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/nakbxaymwvqyebkqgkr0.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/chq9ds9zd39gzxwagveb.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/eh4alxdqdqlqgtl51atu.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ltean7wjzhrobm3ii2ak.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ca5jrqtn7hyabavg68yg.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/kfc5u2twe6nyobdmqh9q.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/y2fkklj1mi9ic8vswnqt.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/fa5cpnenc0oaml4ddbdc.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg",
+];
 import Marquee from "react-fast-marquee";
 
 const Hero = () => {
@@ -28,7 +30,7 @@ const Hero = () => {
     <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden px-48">
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
-        <Marquee speed={30} gradient={true} gradientWidth={600} >
+        <Marquee speed={30} gradient={true} gradientWidth={200}>
           {loadedImages.map((card, index) => (
             <div
               key={index}

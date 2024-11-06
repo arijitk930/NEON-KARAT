@@ -12,14 +12,16 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text"
+          className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text fade-in-scale"
         >
           <img
             src={logo}
             alt="Logo"
-            className="h-10 w-15 transform scale-150 -mr-2" // Added negative margin to reduce spacing
+            className="h-10 w-15 transform scale-150 -mr-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-6"
           />
-          <span>anityCard</span>
+          <span className="transition-transform duration-300 ease-in-out ">
+            anityCard
+          </span>
         </Link>
 
         {/* Menu links */}
