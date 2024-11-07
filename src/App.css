@@ -75,3 +75,9 @@ html{
   line-height: 14px;
   display: inline-block;
 }
+.home-header_form {
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  margin-top: 3rem;
+  display: flex;
+}
