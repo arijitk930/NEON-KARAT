@@ -9,7 +9,7 @@ const content = [
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
           <img
-            src={`https://placehold.co/500x500`}
+            src='http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg'
             alt={`Profile`}
             className="w-full h-full object-cover"
           />
@@ -26,7 +26,7 @@ const content = [
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
           <img
-            src={`https://placehold.co/500x500`}
+            src='http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/rnpmsk4bxnaeqqamilwb.jpg'
             alt={`Profile`}
             className="w-full h-full object-cover"
           />
@@ -42,8 +42,10 @@ const content = [
     visualization: (
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
-          <img
-            src={`https://placehold.co/400x500`}
+          <video
+            src='http://res.cloudinary.com/deus3nlcx/video/upload/v1730804781/videos/ubkzmmooudplehpblgef.mp4'
+            autoPlay
+            loop
             alt={`Profile`}
             className="w-full h-full object-cover"
           />
@@ -125,9 +127,8 @@ const CreditCard = ({ theme = "dark" }) => {
                   }}
                 >
                   <button
-                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-2 transition-opacity duration-300  ${
-                      activeCard === index ? "opacity-100" : "opacity-30"
-                    }`}
+                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-2 transition-opacity duration-300  ${activeCard === index ? "opacity-100" : "opacity-30"
+                      }`}
                     onClick={() => setActiveCard(index)} // Clicking the title expands it
                   >
                     <span className="text-white">{item.normal}</span>
