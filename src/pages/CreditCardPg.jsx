@@ -1,7 +1,10 @@
+import CreditCard from "../components/CreditCard";
+
 export default function CreditCardPg() {
   return (
     <div>
       <Hero />
+      <CreditCard />
     </div>
   );
 }
