@@ -30,7 +30,7 @@ const Hero = () => {
     <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden px-48">
       {/* Marquee Sliding Background Cards */}
       <div className="absolute inset-0 z-0 flex items-center">
-        <Marquee speed={80} gradient={true} gradientWidth={200}>
+        <Marquee speed={80} gradient={true} gradientWidth={200} className="overflow-hidden">
           {loadedImages.map((card, index) => (
             <div
               key={index}
@@ -41,6 +41,7 @@ const Hero = () => {
                 src={card}
                 alt="default"
                 className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           ))}
