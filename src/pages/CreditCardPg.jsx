@@ -1,7 +1,11 @@
+import TaxCommunity from "../components/TaxCommunity";
+
 export default function CreditCardPg() {
   return (
     <div>
       <Hero />
+
+      <TaxCommunity />
     </div>
   );
 }
