@@ -137,7 +137,7 @@ const PlatformSelector = () => {
   ];
 
   return (
-    <div className="flex felx-wrap p-8 max-w-6xl bg-white rounded-xl shadow-xl shadow-gray-400 mx-auto my-10 font-primaryBold justify-evenly">
+    <div className="flex felx-wrap p-8 max-w-6xl bg-white rounded-xl shadow-xl shadow-gray-400 mx-auto mt-10 font-primaryBold justify-evenly">
       {/* Platform Selection */}
       <div className="flex justify-center space-x-3 border-2 p-4 rounded-lg border-gray-500 w-2/3">
         {platforms.map((platform) => (
@@ -182,70 +182,75 @@ const PlatformSelector = () => {
     </div>
   );
 };
+import { PieChart, Pie, Cell } from 'recharts';
 
-import React from 'react';
 
-const RevenueBreakdown = () => {
+function RevenueBreakdown() {
   const totalRevenue = 314713;
-  const breakdown = [
-    { label: 'Brand Deals', color: 'bg-blue-700', value: 29.2 },
-    { label: 'Platform Revenue', color: 'bg-blue-500', value: 37 },
-    { label: 'E-Commerce & Memberships', color: 'bg-purple-200', value: 20 },
-    { label: 'Recurring Payroll', color: 'bg-purple-400', value: 10 },
-    { label: 'Other', color: 'bg-black', value: 3.8 },
+
+  const data = [
+    { name: 'Brand Deals', value: 29.2, color: '#6366F1' },
+    { name: 'Platform Revenue', value: 37, color: '#818CF8' },
+    { name: 'E-Commerce & Memberships', value: 20.3, color: '#1E1B4B' },
+    { name: 'Recurring Payroll', value: 8.5, color: '#C7D2FE' },
+    { name: 'Other', value: 5, color: '#000000' }
   ];
-
   return (
-    <div className="flex justify-center items-center w-full">
-      <div className="flex bg-white rounded-lg shadow-lg w-full">
-        {/* Left side - Donut chart and total revenue */}
-        <div className="p-8 flex flex-col justify-center items-center">
-          <div className="relative flex justify-center items-center w-48 h-48 rounded-full bg-gray-100">
-            <div className="absolute w-full h-full rounded-full border-[10px] border-t-blue-700 border-r-blue-500 border-b-purple-200 border-l-black" />
-            <div className="absolute flex flex-col items-center">
-              <span className="text-2xl font-bold text-blue-700">${totalRevenue.toLocaleString()}</span>
-              <span className="text-gray-500">TOTAL REVENUE</span>
-            </div>
-          </div>
-
-          {/* Legend */}
-          <div className="mt-6 space-y-4">
-            {breakdown.map((item, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <div className={`w-4 h-4 ${item.color} rounded-full`} />
-                <span className="text-gray-700">{item.label}</span>
-              </div>
-            ))}
+    <div className="min-h-screen bg-[#6366F1] flex items-center justify-center pt-0 p-4">
+      <div className="bg-white rounded-2xl p-6 flex gap-6 max-w-4xl w-full">
+        {/* Left side - Donut Chart */}
+        <div className="relative flex-1 flex items-center justify-center">
+          <PieChart width={300} height={300}>
+            <Pie
+              data={data}
+              cx={150}
+              cy={150}
+              innerRadius={100}
+              outerRadius={130}
+              paddingAngle={2}
+              dataKey="value"
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+          </PieChart>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-[#6366F1] text-3xl font-bold">${totalRevenue.toLocaleString()}</span>
+            <span className="text-gray-400 text-xs mt-1">TOTAL REVENUE</span>
           </div>
         </div>
 
-        {/* Right side - Revenue details */}
-        <div className="bg-black text-white p-8 rounded-r-lg w-80 flex flex-col justify-between">
-          <div>
-            <h2 className="text-2xl font-bold mb-8">REVENUE BREAKDOWN</h2>
-            {breakdown.map((item, index) => (
-              <div key={index} className="flex justify-between py-4 border-b border-gray-700">
-                <span>{item.label}</span>
-                <span>{item.value}%</span>
+        {/* Right side - Legend and Details */}
+        <div className="flex-1 bg-black rounded-xl p-6 text-white">
+          <h2 className="text-3xl font-bold mb-6">REVENUE<br />BREAKDOWN</h2>
+
+          <div className="space-y-4">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-between items-center">
+                <span className="text-gray-400 uppercase text-sm">{item.name}</span>
+                <span className="text-xl">{item.value}%</span>
               </div>
             ))}
           </div>
-          {/* Total income and button */}
-          <div className="mt-8">
-            <div className="text-center">
-              <p className="text-gray-500 text-sm">TOTAL INCOME</p>
-              <h3 className="text-3xl font-extrabold mt-2">${totalRevenue.toLocaleString()}</h3>
-            </div>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 w-full py-3 mt-8 text-lg font-semibold rounded-lg hover:opacity-90 transition">
+
+          <div className="mt-6">
+            <div className="text-gray-400 text-sm mb-1">TOTAL INCOME</div>
+            <div className="text-4xl font-bold mb-4">${totalRevenue.toLocaleString()}</div>
+
+            <button className="w-full bg-[#6366F1] text-white py-3 rounded-lg text-base font-semibold hover:bg-[#4F46E5] transition-colors">
               Try It Now
             </button>
-            <p className="text-center text-gray-400 text-sm mt-4">Just connect your socials</p>
+
+            <div className="text-center text-gray-500 mt-2 text-sm">
+              Just connect your socials
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 
 export { PlatformSelector, ComparisonComponent, RevenueBreakdown };
