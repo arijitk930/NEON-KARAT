@@ -44,29 +44,29 @@ const Testimonials = () => {
   // Example card data
   const cardData = [
     {
-      image: "https://placehold.co/500x500",
-      title: "NasDaily",
+      image: "https://avatar.iran.liara.run/public/boy?username=Ash",
+      title: "Our User",
       subtitle: "21M FOLLOWERS ON FACEBOOK",
       description: '"I have over $3M in revenue per year..."',
       socialIcon: "path-to-facebook-icon.svg",
     },
     {
-      image: "https://placehold.co/500x500",
-      title: "RealEngineering",
+      image: "https://avatar.iran.liara.run/public/boy?username=Ash",
+      title: "Our User",
       subtitle: "4.1M FOLLOWERS ON YOUTUBE",
       description: '"Despite running a top YouTube channel..."',
       socialIcon: "path-to-youtube-icon.svg",
     },
     {
-      image: "https://placehold.co/500x500",
-      title: "NasDaily",
+      image: "https://avatar.iran.liara.run/public/boy?username=Ash",
+      title: "Our User",
       subtitle: "21M FOLLOWERS ON FACEBOOK",
       description: '"I have over $3M in revenue per year..."',
       socialIcon: "path-to-facebook-icon.svg",
     },
     {
-      image: "https://placehold.co/500x500",
-      title: "RealEngineering",
+      image: "https://avatar.iran.liara.run/public/boy?username=Ash",
+      title: "Our User",
       subtitle: "4.1M FOLLOWERS ON YOUTUBE",
       description: '"Despite running a top YouTube channel..."',
       socialIcon: "path-to-youtube-icon.svg",

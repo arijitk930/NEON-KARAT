@@ -4,6 +4,7 @@ import "./App.css";
 import { Outlet } from "react-router-dom";
 import FollowUs from "./components/FollowUs";
 import BottomSection from "./components/BottomSection";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const content1 = [
@@ -64,11 +65,14 @@ function App() {
 
   return (
     <div className="App min-h-screen bg-pastel-gradient bg-cover">
-      <Navbar />
-      <Outlet />
-      <BottomSection />
-      <FollowUs />
-      <Footer />
+      <ScrollToTop>
+        <Navbar />
+        <Outlet />
+        <BottomSection />
+        <FollowUs />
+        <Footer />
+      </ScrollToTop>
+
     </div>
   );
 }

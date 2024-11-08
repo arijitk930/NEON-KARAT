@@ -21,6 +21,13 @@ function ComparisonComponent() {
 
   const [currentSection, setCurrentSection] = useState(0);
 
+  const users=[
+    "https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk",
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/w9zdu4vxqb7iebv8ysyk.jpg',
+    "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
+    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg',
+    "https://avatar.iran.liara.run/public/boy?username=Bob"
+  ]
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSection(
@@ -71,7 +78,7 @@ function ComparisonComponent() {
 
           {/* Profile image */}
           <img
-            src="https://via.placeholder.com/64"
+            src="https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250"
             alt="Profile"
             className="absolute w-16 h-16 rounded-full border-4 border-white"
           />
@@ -82,10 +89,10 @@ function ComparisonComponent() {
       <div className="md:w-1/3 space-y-4">
         <div className="flex justify-center space-x-2">
           {/* Profile images */}
-          {[...Array(5)].map((_, index) => (
+          {users.map((imgSrc, index) => (
             <img
               key={index}
-              src="https://via.placeholder.com/40"
+              src={imgSrc}
               alt="User"
               className={`w-10 h-10 rounded-full ${index === 2 ? "border-4 border-blue-500" : ""
                 }`}
@@ -196,7 +203,7 @@ function RevenueBreakdown() {
     { name: 'Other', value: 5, color: '#000000' }
   ];
   return (
-    <div className="min-h-screen bg-[#6366F1] flex items-center justify-center pt-0 p-4">
+    <div className="min-h-screen bg-purple-500 flex items-center justify-center pt-0 p-4">
       <div className="bg-white rounded-2xl p-6 flex gap-6 max-w-4xl w-full">
         {/* Left side - Donut Chart */}
         <div className="relative flex-1 flex items-center justify-center">
@@ -217,13 +224,13 @@ function RevenueBreakdown() {
           </PieChart>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-[#6366F1] text-3xl font-bold">${totalRevenue.toLocaleString()}</span>
-            <span className="text-gray-400 text-xs mt-1">TOTAL REVENUE</span>
+            <span className="text-gray-600 text-xs mt-1">TOTAL REVENUE</span>
           </div>
         </div>
 
         {/* Right side - Legend and Details */}
         <div className="flex-1 bg-black rounded-xl p-6 text-white">
-          <h2 className="text-3xl font-bold mb-6">REVENUE<br />BREAKDOWN</h2>
+          <h2 className="font-primaryBold text-3xl font-bold mb-6">REVENUE<br />BREAKDOWN</h2>
 
           <div className="space-y-4">
             {data.map((item, index) => (
