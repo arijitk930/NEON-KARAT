@@ -70,7 +70,7 @@ const TaxComponent = () => {
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-white font-primaryBold">Community</h2>
                         <p className="mt-2">
-                            Join the Karat community for exclusive events with the biggest creators in the world.
+                            Join the VanityCard community for exclusive events with the biggest creators in the world.
                         </p>
                     </div>
                     <div>
