@@ -1,5 +1,5 @@
 import CreditCard from "../components/CreditCard";
-
+import React, { useState } from "react";
 import TaxCommunity from "../components/TaxCommunity";
 
 export default function CreditCardPg() {
@@ -10,6 +10,7 @@ export default function CreditCardPg() {
       <CardComponent />
       <SecurityFeatures />
       <TaxCommunity />
+      <Accordion />
     </div>
   );
 }
@@ -152,6 +153,117 @@ function SecurityFeatures() {
               If you run into any suspicious activity on your card, our
               concierge team is at your service from 6am to 11pm PT.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AccordionItem({ question, answer, isOpen, onClick }) {
+  return (
+    <div className="border-b border-gray-200 py-4">
+      <button
+        className="flex justify-between items-center w-full text-left text-white"
+        onClick={onClick}
+      >
+        <span className="text-[32px]">{question}</span>
+
+        <span
+          className={`flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white text-3xl transition-transform duration-500 ease-in-out ${
+            isOpen ? "rotate-45 scale-110" : "hover:scale-105"
+          }`}
+        >
+          +
+        </span>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-40" : "max-h-0"
+        }`}
+      >
+        <p className="mt-4 text-[18px] text-white">{answer}</p>
+      </div>
+    </div>
+  );
+}
+
+function Accordion() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqData = [
+    {
+      question: "How do I save in taxes by writing off business expenses?",
+      answer:
+        "Your content-related expenses can all be potentially considered business expenses by the IRS and eligible to write-off in taxes. For example, if you pay your video editor $100, you might be able to save anywhere between $10 and $40 (depending on your tax bracket) off that expense if you write it off. The Karat Card makes it easy to track and manage these business expenses. Our dashboard gives a clear view of your spending. Plus, we offer Tax and Bookkeeping services to keep things organized.",
+    },
+    {
+      question: "How does the rewards program work?",
+      answer:
+        "Earn 1-3 points on every dollar spent, based on custom spend categories that you select when you join. You can redeem your points for billboards, custom merch, podcast studio time, statement credit, and much much more (redemption rates  vary). Or, trade points for statement credit at 100 points = $1.",
+    },
+    {
+      question: "How does Karat build my personal credit score?",
+      answer:
+        "You need a good credit score to get an apartment, car, or mortgage. The Karat card helps creators build their credit score. As you pay off your Karat card every month, we will help you build your credit history which will increase your credit score over time.",
+    },
+    {
+      question: "How does paying off my Karat card work?",
+      answer:
+        "It’s super simple. At the end of every calendar month, you’ll be responsible for paying off your balance (how much you spent that month). There’s no interest or fees. Our autopay system makes this process seamless, and these on-time payments will build your credit history.",
+    },
+    {
+      question: "Will applying affect my credit score?",
+      answer:
+        "Nope. Unlike with most other credit card companies, your credit will not be impacted by applying.",
+    },
+    {
+      question: "How often can I change my reward categories?",
+      answer:
+        "Every six months. You can contact our Concierge team, who will make the change for you.",
+    },
+    {
+      question: "Can I create a custom category?",
+      answer:
+        "Our current reward categories cover everything from everyday transactions to creator-focused expenses. At this time, however, we do not support custom categories.",
+    },
+    {
+      question: "Do rewards expire?",
+      answer: "No. Our rewards do not expire.",
+    },
+    {
+      question: "How do I know if a merchant will be eligible for points?",
+      answer:
+        "Merchant codes are defined by the Visa/Mastercard network. While we strive to include all relevant merchant codes, in the event that a merchant does not have a code in a particular category, purchases with that merchant may not qualify for rewards in that category.",
+    },
+    {
+      question: "What if I have more questions?",
+      answer:
+        "Feel free to DM us on Instagram @vanityCard if you have any other questions!",
+    },
+  ];
+
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="relative overflow-hidden">
+      <div className="bg-purple-800 px-[2.5rem] py-[8rem] text-white">
+        <div className="w-full max-w-[77rem] mr-auto ml-auto">
+          <h2 className="text-[40px] font-primaryBold mb-6">
+            DO YOU HAVE ANY QUESTIONS? WE HAVE GOT ANSWERS
+          </h2>
+          <div className="space-y-4">
+            {faqData.map((item, index) => (
+              <AccordionItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+              />
+            ))}
           </div>
         </div>
       </div>
