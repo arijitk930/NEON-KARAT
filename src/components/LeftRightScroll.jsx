@@ -31,12 +31,12 @@ const LeftRightScroll = () => {
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
-          <Marquee speed={50} className="w-full"> {/* Reduced speed */}
+          <Marquee speed={50} className="w-full "> {/* Reduced speed */}
             {tImg.map((url, index) => (
               <img
                 key={`top-${index}`}
                 src={url}
-                className="h-48 w-72 object-cover rounded-lg mx-6"
+                className="h-48 w-72 object-cover rounded-lg mx-6  opacity-65"
                 alt={`Concert ${index + 1}`}
                 loading="lazy"
               />
@@ -56,7 +56,7 @@ const LeftRightScroll = () => {
               <img
                 key={`bottom-${index}`}
                 src={url}
-                className="h-48 w-72 object-cover rounded-lg mx-6"
+                className="h-48 w-72 object-cover rounded-lg mx-6  opacity-65"
                 alt={`Concert ${index + 7}`}
                 loading="lazy"
               />

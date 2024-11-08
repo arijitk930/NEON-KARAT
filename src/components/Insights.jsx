@@ -89,11 +89,11 @@ export default function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Left side content */}
-            <div className="space-y-3">
+            <div className="space-y-6">
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="transition-all duration-500 p-4 rounded-lg "
+                  className="transition-all duration-500 rounded-lg "
                   style={{
                     opacity: activeCard === index ? 1 : 0.7,
                     transform:

@@ -7,7 +7,7 @@ const NotificationCard = ({ type, username, time, message, userImage }) => {
   return (
     <div className="w-72 bg-white rounded-xl shadow-sm p-4">
       <div className="flex items-center gap-3">
-        <img src="https://placehold.co/500x500" alt="" />
+        <img src={userImage} alt="" />
       </div>
     </div>
   );
@@ -40,8 +40,8 @@ const CreatorAnalytics = () => {
           type="subscription"
           username="nick.muells"
           time="2d"
-          userImage="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-        />
+          userImage=
+          'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg' />
       </div>
 
       {/* Main analytics card */}
@@ -151,7 +151,7 @@ const CreatorAnalytics = () => {
           username="milkthistle72"
           time="23h"
           message="This is such a 🔥 shot. We should collaborate..."
-          userImage="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          userImage="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg"
         />
       </div>
     </div>

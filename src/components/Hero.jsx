@@ -27,48 +27,51 @@ const Hero = () => {
     setLoadedImages(images);
   }, []);
   return (
-    <div className="relative h-screen custom-gradient grid items-center justify-start overflow-hidden px-48">
-      {/* Marquee Sliding Background Cards */}
-      <div className="absolute inset-0 z-0 flex items-center">
-        <Marquee speed={80} gradient={true} gradientWidth={200} className="overflow-hidden">
-          {loadedImages.map((card, index) => (
-            <div
-              key={index}
-              className="rounded-lg transform transition-transform duration-300 hover:scale-105 mx-6"
-              style={{ minWidth: "350px", maxWidth: "350px" }}
-            >
-              <img
-                src={card}
-                alt="default"
-                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </Marquee>
-      </div>
-
-      {/* Hero Content */}
-      <div className="relative z-10 w-2/3 left-10">
-        <h1 className="text-3xl md:text-4xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
-          WE HELP CREATORS WITH MONEY
-        </h1>
-        <div className="mt-6 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
-          />
-
-          <input
-            type="text"
-            placeholder="Enter your social handle"
-            className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
-          />
-          <button className="button rounded-md font-bold">Get Started</button>
+    <>
+      <div className="relative h-[500px] grid items-center justify-start overflow-hidden px-48">
+        {/* Marquee Sliding Background Cards */}
+        <div className="absolute inset-0 z-0 flex items-center">
+          <Marquee speed={50} gradient={true} gradientWidth={800} className="overflow-hidden">
+            {loadedImages.map((card, index) => (
+              <div
+                key={index}
+                className="rounded-lg transform transition-transform duration-300 hover:scale-105 mx-6"
+                style={{ minWidth: "350px", maxWidth: "350px" }}
+              >
+                <img
+                  src={card}
+                  alt="default"
+                  className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </Marquee>
         </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 w-2/3 left-10">
+          <h1 className="text-3xl md:text-4xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent credit-card">
+            WE HELP CREATORS WITH MONEY
+          </h1>
+          <div className="mt-6 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
+            />
+
+            <input
+              type="text"
+              placeholder="Enter your social handle"
+              className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900"
+            />
+            <button className="button rounded-md font-bold">Get Started</button>
+          </div>
+        </div>
+        <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/45 to-transparent backdrop-blur-sm"></div>
       </div>
-    </div>
+    </>
   );
 };
 
