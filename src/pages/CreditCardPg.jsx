@@ -1,10 +1,12 @@
+import CreditCard from "../components/CreditCard";
+
 import TaxCommunity from "../components/TaxCommunity";
 
 export default function CreditCardPg() {
   return (
     <div>
       <Hero />
-
+      <CreditCard />
       <TaxCommunity />
     </div>
   );
