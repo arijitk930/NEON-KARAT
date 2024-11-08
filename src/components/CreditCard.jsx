@@ -58,14 +58,14 @@ const CreditCard = ({ theme = "dark" }) => {
   const themeClasses = {
     dark: {
       background: "bg-gradient-to-r from-purple-600 via-pink-600 to-red-600",
-      title: "text-white",
+      title: "",
       progressBarBg: "bg-gray-700",
       progressBarFill: "bg-blue-500",
-      highlight: "text-blue-200",
+      highlight: "text-blue-600",
       cardBg: "bg-gray-800",
       cardShadow: "shadow-xl",
       hr: "bg-gray-600",
-      text: "text-white",
+      text: "",
     },
   };
 
@@ -99,7 +99,7 @@ const CreditCard = ({ theme = "dark" }) => {
 
   return (
     <div
-      className={`relative min-h-screen py-20 ${themeClasses[theme].background}`}
+      className={`relative min-h-screen py-20 credit-card`}
     >
       <div className="max-w-5xl mx-auto px-4 lg:px-8">
         <div className={`sticky top-4`}>
@@ -131,7 +131,7 @@ const CreditCard = ({ theme = "dark" }) => {
                       }`}
                     onClick={() => setActiveCard(index)} // Clicking the title expands it
                   >
-                    <span className="text-white">{item.normal}</span>
+                    <span className="">{item.normal}</span>
                     <span className={themeClasses[theme].highlight}>
                       {item.highlighted}
                     </span>

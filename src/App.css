@@ -36,7 +36,8 @@ body {
   background-size: contain;
   line-height: 150%;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -44,6 +45,7 @@ html{
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
   background-size: cover;
 }
+
 .button {
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
   background-position: 50%;
@@ -55,14 +57,26 @@ html{
   font-weight: 500;
   line-height: 14px;
   display: inline-block;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Smooth transition */
+}
+
+.credit-card {
+  background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .button:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
-  color: rgb(90, 35, 107); /* Change text color on hover */
+  transform: scale(1.05);
+  /* Slightly increase size */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Darken background on hover */
+  color: rgb(90, 35, 107);
+  /* Change text color on hover */
 }
+
 .button-insights {
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
   background-position: 50%;
@@ -75,6 +89,7 @@ html{
   line-height: 14px;
   display: inline-block;
 }
+
 .home-header_form {
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
