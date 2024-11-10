@@ -19,8 +19,8 @@ const Navbar = () => {
             alt="Logo"
             className="h-10 w-15 transform scale-150 -mr-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-6"
           />
-          <span className="transition-transform duration-300 ease-in-out ">
-            anityCard
+          <span className="transition-transform duration-300 ease-in-out bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block">
+            anity Card
           </span>
         </Link>
 
