@@ -1,10 +1,16 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import FollowUs from "./components/FollowUs";
 import BottomSection from "./components/BottomSection";
 import ScrollToTop from "./components/ScrollToTop";
+import service from "./services/appwriteConfig";
+import { useEffect, useState } from "react";
+import { useAuth, UserContextProvider } from "./services/AppContext";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Sidebar from "./components/DashboardNavbar";
+import TopBar from "./components/DashboardTopBar";
 
 function App() {
   const content1 = [
@@ -62,18 +68,74 @@ function App() {
       ),
     },
   ];
+  const [user, setUser] = useState(null)
+  const [authStatus, setAuthStatus] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+  const login = (userDetail) => {
+    setUser(userDetail)
+    setAuthStatus(true)
+  }
+  const logout = () => {
+    setAuthStatus(false)
+    setUser(null)
+  }
+  const loginContext = async () => {
+    try {
+      const res = await service.account.get()
+      if (res) {
+        login(res)
+        setLoading(false)
+        navigate("/dashboard")
+      }
+      else
+        logout()
+    } catch (error) {
+      navigate("/")
+      //console.log("loginContext", error)
+    }
+  }
+  useEffect(() => {
+    loginContext()
+    setLoading(false)
+  }, [])
+
 
   return (
-    <div className="App min-h-screen bg-pastel-gradient bg-cover">
-      <ScrollToTop>
-        <Navbar />
-        <Outlet />
-        <BottomSection />
-        <FollowUs />
-        <Footer />
-      </ScrollToTop>
+    <ScrollToTop>
+      {
+        authStatus === true ? (
+          <UserContextProvider value={{ user, authStatus, login, logout }}>
 
-    </div>
+
+            <div className="flex h-screen">
+              {/* Sidebar */}
+              <Sidebar />
+
+              {/* Main content area */}
+              <div className="flex-1 p-8">
+                {/* Top Bar */}
+                <TopBar userName={user.name} userInitials={user.name.split(' ').map(word => word[0].toUpperCase()).join('')} />
+
+                {/* Dashboard content */}
+                <Outlet />
+              </div>
+            </div>
+
+
+          </UserContextProvider>) :
+          (<div className="App min-h-screen bg-pastel-gradient bg-cover">
+
+            <Navbar />
+            <Outlet />
+            <BottomSection />
+            <FollowUs />
+            <Footer />
+          </div >)
+      }
+    </ScrollToTop>
+
+
   );
 }
 

@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import icons
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const { pathname } = useLocation();
+  useEffect(() => {
+    console.log(pathname)
+  }, [pathname])
   return (
     <nav className="backdrop-blur-md p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out fade-in">
       <div className="flex items-center space-x-8">
@@ -52,7 +55,6 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-
       {/* Hamburger menu for mobile */}
       <div className="lg:hidden">
         <button
@@ -65,9 +67,8 @@ const Navbar = () => {
 
       {/* Mobile Menu links */}
       <ul
-        className={`lg:hidden absolute w-full left-0 top-16 bg-white border border-gray-200 shadow-lg transition-all duration-500 ease-in-out ${
-          menuOpen ? "block" : "hidden"
-        }`}
+        className={`lg:hidden absolute w-full left-0 top-16 bg-white border border-gray-200 shadow-lg transition-all duration-500 ease-in-out ${menuOpen ? "block" : "hidden"
+          }`}
       >
         <li>
           <Link
@@ -98,17 +99,19 @@ const Navbar = () => {
       {/* Action buttons */}
       <div className="hidden lg:flex space-x-4 items-center">
         {/* Log In Button */}
-        <Link to="/" className="text-black text-lg normal-case font-bold">
-          Log in
-        </Link>
+        {pathname !== "/login" &&
+          (<Link to="/login" className="text-black text-lg normal-case font-bold">
+            Log in
+          </Link>)}
 
         {/* Get Started Button */}
-        <Link
-          to="/"
-          className="button px-4 py-4  rounded-xl  transform hover:scale-105 transition duration-300"
-        >
-          Get Started
-        </Link>
+        {pathname!=="/register" &&
+          (<Link
+            to="/register"
+            className="button px-4 py-4  rounded-xl  transform hover:scale-105 transition duration-300"
+          >
+            Get Started
+          </Link>)}
       </div>
     </nav>
   );

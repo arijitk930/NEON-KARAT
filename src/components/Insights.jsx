@@ -1,4 +1,5 @@
 import { useState } from "react"; // Ensure this is correct
+import { Link } from "react-router-dom";
 
 const data = [
   {
@@ -141,9 +142,9 @@ export default function Insights() {
                   )}
                 </div>
               ))}
-              <button className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300   hover:border-2 hover:border-purple-700 font-bold">
+              <Link to="/register" className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300   hover:border-2 hover:border-purple-700 font-bold">
                 GET STARTED
-              </button>
+              </Link>
             </div>
 
             {/* Right side visualization */}

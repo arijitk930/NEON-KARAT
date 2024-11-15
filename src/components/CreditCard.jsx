@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 const content = [
   {
     normal: "Limit based on ",
@@ -162,9 +163,12 @@ const CreditCard = ({ theme = "dark" }) => {
                 </div>
               ))}
               <div className="flex justify-between items-center mt-6">
-                <button className="bg-blue-400 shadow-lg hover:shadow-xl text-black rounded-xl px-6 py-2 normal-case text-lg">
+                <Link
+                  to="/register"
+                  className="bg-blue-400 shadow-lg hover:shadow-xl text-black rounded-xl px-6 py-2 normal-case text-lg"
+                >
                   Get Started
-                </button>
+                </Link>
                 <button className="text-white">Learn More</button>
                 <button></button>
               </div>
@@ -190,7 +194,7 @@ const CreditCard = ({ theme = "dark" }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

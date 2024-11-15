@@ -18,6 +18,7 @@ const images = [
   "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg",
 ];
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [loadedImages, setLoadedImages] = useState([]);
@@ -76,9 +77,15 @@ const Hero = () => {
               placeholder="Enter your social handle"
               className="px-4 py-2 rounded-md bg-brown-100 text-black placeholder-gray-700 focus:outline-none border border-gray-300 focus:border-brown-900 w-full md:w-auto"
             />
-            <button className="px-5 py-4 rounded-md font-bold button">
+            {/* <button className="px-5 py-4 rounded-md font-bold button">
               Get Started
-            </button>
+            </button> */}
+            <Link
+              to="/register"
+              className="button px-4 py-4  rounded-xl  transform hover:scale-105 transition duration-300"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
