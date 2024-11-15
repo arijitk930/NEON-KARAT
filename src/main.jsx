@@ -14,6 +14,7 @@ import CreditCardPg from "../src/pages/CreditCardPg.jsx";
 import Login from "./pages/LoginPage.jsx";
 import { RegisterPage } from "./pages/RegisterPage.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import ProfileInsights from "./pages/dashboard/ProfileInsights.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,9 +22,10 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/insights" element={<Insights />} />
       <Route path="/credit-card" element={<CreditCardPg />} />
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/register" element={<RegisterPage/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profileInsights" element={<ProfileInsights />} />
     </Route>
   )
 );

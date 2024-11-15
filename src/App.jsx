@@ -68,74 +68,69 @@ function App() {
       ),
     },
   ];
-  const [user, setUser] = useState(null)
-  const [authStatus, setAuthStatus] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const navigate = useNavigate()
+  const [user, setUser] = useState(null);
+  const [authStatus, setAuthStatus] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const login = (userDetail) => {
-    setUser(userDetail)
-    setAuthStatus(true)
-  }
+    setUser(userDetail);
+    setAuthStatus(true);
+  };
   const logout = () => {
-    setAuthStatus(false)
-    setUser(null)
-  }
+    setAuthStatus(false);
+    setUser(null);
+  };
   const loginContext = async () => {
     try {
-      const res = await service.account.get()
+      const res = await service.account.get();
       if (res) {
-        login(res)
-        setLoading(false)
-        navigate("/dashboard")
-      }
-      else
-        logout()
+        login(res);
+        setLoading(false);
+      } else logout();
     } catch (error) {
-      navigate("/")
+      navigate("/");
       //console.log("loginContext", error)
     }
-  }
+  };
   useEffect(() => {
-    loginContext()
-    setLoading(false)
-  }, [])
-
+    loginContext();
+    setLoading(false);
+  }, []);
 
   return (
     <ScrollToTop>
-      {
-        authStatus === true ? (
-          <UserContextProvider value={{ user, authStatus, login, logout }}>
+      {authStatus === true ? (
+        <UserContextProvider value={{ user, authStatus, login, logout }}>
+          <div className="flex h-screen">
+            {/* Sidebar */}
+            <Sidebar />
 
+            {/* Main content area */}
+            <div className="flex-1 p-8">
+              {/* Top Bar */}
+              <TopBar
+                userName={user.name}
+                userInitials={user.name
+                  .split(" ")
+                  .map((word) => word[0].toUpperCase())
+                  .join("")}
+              />
 
-            <div className="flex h-screen">
-              {/* Sidebar */}
-              <Sidebar />
-
-              {/* Main content area */}
-              <div className="flex-1 p-8">
-                {/* Top Bar */}
-                <TopBar userName={user.name} userInitials={user.name.split(' ').map(word => word[0].toUpperCase()).join('')} />
-
-                {/* Dashboard content */}
-                <Outlet />
-              </div>
+              {/* Dashboard content */}
+              <Outlet />
             </div>
-
-
-          </UserContextProvider>) :
-          (<div className="App min-h-screen bg-pastel-gradient bg-cover">
-
-            <Navbar />
-            <Outlet />
-            <BottomSection />
-            <FollowUs />
-            <Footer />
-          </div >)
-      }
+          </div>
+        </UserContextProvider>
+      ) : (
+        <div className="App min-h-screen bg-pastel-gradient bg-cover">
+          <Navbar />
+          <Outlet />
+          <BottomSection />
+          <FollowUs />
+          <Footer />
+        </div>
+      )}
     </ScrollToTop>
-
-
   );
 }
 
