@@ -5,7 +5,7 @@ const Dashboard = () => {
       <div className="bg-blue-100 p-6 rounded-lg mb-8 shadow">
         <h3 className="text-xl font-semibold mb-4">You are nearly there</h3>
         <p>
-          Finish your application to see if you qualify for the Karat card and
+          Finish your application to see if you qualify for the Vanity card and
           access:
         </p>
         <ul className="list-disc list-inside ml-4 my-4">
@@ -22,7 +22,7 @@ const Dashboard = () => {
       <div className="bg-gray-50 p-6 rounded-lg shadow">
         <h4 className="text-lg font-semibold mb-2">Next Steps</h4>
         <p>
-          You have applied for the Karat card! We all review your application
+          You have applied for the Vanity card! We all review your application
           and provide an update in the next 7 business days.
         </p>
       </div>

@@ -195,7 +195,7 @@ function Accordion() {
     {
       question: "How do I save in taxes by writing off business expenses?",
       answer:
-        "Your content-related expenses can all be potentially considered business expenses by the IRS and eligible to write-off in taxes. For example, if you pay your video editor $100, you might be able to save anywhere between $10 and $40 (depending on your tax bracket) off that expense if you write it off. The Karat Card makes it easy to track and manage these business expenses. Our dashboard gives a clear view of your spending. Plus, we offer Tax and Bookkeeping services to keep things organized.",
+        "Your content-related expenses can all be potentially considered business expenses by the IRS and eligible to write-off in taxes. For example, if you pay your video editor $100, you might be able to save anywhere between $10 and $40 (depending on your tax bracket) off that expense if you write it off. The VanityCard Card makes it easy to track and manage these business expenses. Our dashboard gives a clear view of your spending. Plus, we offer Tax and Bookkeeping services to keep things organized.",
     },
     {
       question: "How does the rewards program work?",
@@ -203,12 +203,12 @@ function Accordion() {
         "Earn 1-3 points on every dollar spent, based on custom spend categories that you select when you join. You can redeem your points for billboards, custom merch, podcast studio time, statement credit, and much much more (redemption rates  vary). Or, trade points for statement credit at 100 points = $1.",
     },
     {
-      question: "How does Karat build my personal credit score?",
+      question: "How does VanityCard build my personal credit score?",
       answer:
-        "You need a good credit score to get an apartment, car, or mortgage. The Karat card helps creators build their credit score. As you pay off your Karat card every month, we will help you build your credit history which will increase your credit score over time.",
+        "You need a good credit score to get an apartment, car, or mortgage. The VanityCard card helps creators build their credit score. As you pay off your VanityCard card every month, we will help you build your credit history which will increase your credit score over time.",
     },
     {
-      question: "How does paying off my Karat card work?",
+      question: "How does paying off my VanityCard card work?",
       answer:
         "It’s super simple. At the end of every calendar month, you’ll be responsible for paying off your balance (how much you spent that month). There’s no interest or fees. Our autopay system makes this process seamless, and these on-time payments will build your credit history.",
     },

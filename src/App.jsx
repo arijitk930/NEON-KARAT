@@ -91,7 +91,6 @@ function App() {
       else
         logout()
     } catch (error) {
-      navigate("/")
       //console.log("loginContext", error)
     }
   }

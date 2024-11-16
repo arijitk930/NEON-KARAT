@@ -1,123 +1,9 @@
-/* import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
-import service from '../services/appwriteConfig';
-function RegisterPage() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: ''
-    });
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
-
-    // Handle input changes
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    // Handle form submission
-    const handleSubmit =async (e) => {
-        e.preventDefault();
-
-        // Basic validation
-        if (!formData.name || !formData.email || !formData.password) {
-            setError('All fields are required!');
-            return;
-        }
-        await service.registerUser({...formData})
-        
-        // Clear the form
-        setFormData({ name: '', email: '', password: '' });
-        setError('');
-       // navigate('/login');
-    };
-
-    return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-100">
-            <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
-                <div className="flex justify-center mb-6">
-                    <Link
-                        to="/"
-                        className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text fade-in-scale"
-                    >
-                        <img
-                            src={logo}
-                            alt="Logo"
-                            className="h-10 w-15 transform scale-150 -mr-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-6"
-                        />
-                        <span className="transition-transform duration-300 ease-in-out bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block">
-                            anity Card
-                        </span>
-                    </Link>
-                </div>
-                <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
-
-                {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label className="block text-gray-700">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your name"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label className="block text-gray-700">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your email"
-                            required
-                        />
-                    </div>
-
-                    <div className="mb-6">
-                        <label className="block text-gray-700">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            className="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your password"
-                            required
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
-                    >
-                        Register
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
-}
-
-export default RegisterPage;
- */
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
 import service from '../services/appwriteConfig';
+import google from "../assets/google.jpg";
+import { useAuth } from '../services/AppContext';
 
 function RegisterPage() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -126,6 +12,7 @@ function RegisterPage() {
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
     const navigate = useNavigate();
+    const {login,logout}=useAuth()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -134,10 +21,14 @@ function RegisterPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         // Basic validation
         if (!formData.name || !formData.email || !formData.password) {
             showModalMessage('All fields are required!');
+            return;
+        }
+        else if(formData.password.length<8)
+        {
+            showModalMessage('Password must be of length 8 or more');
             return;
         }
 
@@ -145,27 +36,37 @@ function RegisterPage() {
             const user = await service.registerUser({ ...formData });
             if (user) {
                 showModalMessage('Registration successful! Please check your email to verify your account.');
-                setFormData({ name: '', email: '', password: '' });
+                
                 setTimeout(() => {
-                    navigate('/login');
+                    closeModal()
+                    service.loginUser(formData.email,formData.password);
+                    setFormData({ name: '', email: '', password: '' });
+                    login(user);
+                    window.location.reload()
                 }, 3000); // Redirect after 3 seconds
+                
             }
         } catch (err) {
-            showModalMessage('Registration failed. Please try again.');
-            console.error('Registration error:', err);
+            showModalMessage('Registration failed. Please try again. Reason may be duplicate email id or commonly used passwords');
+            setFormData({ name: '', email: '', password: '' });
         }
     };
-    const handleGoogleSignIn = () => {
-        service.account.createOAuth2Session('google')
-            .then(() => {
-                showModalMessage('Google Sign-In successful!');
-                navigate('/dashboard'); // Redirect to your app's main page after login
-            })
-            .catch(err => {
-                showModalMessage('Google Sign-In failed.');
-                console.error('Google Sign-In error:', err);
-            });
-    };
+    const handleGoogleSignIn = async () => {
+        await service.account
+          .createOAuth2Session(
+            "google",
+            "http://localhost:5173",
+            "http://localhost:5173/login"
+          )
+          .then(() => {
+            console.log("Google Sign-In successful!");
+            navigate("/"); // Redirect to your app's main page after login
+          })
+          .catch((err) => {
+            showModalMessage("Google Sign-In failed.");
+            console.error("Google Sign-In error:", err);
+          });
+      };
     const showModalMessage = (message) => {
         setModalMessage(message);
         setShowModal(true);
@@ -185,6 +86,14 @@ function RegisterPage() {
                         <span>Anity Card</span>
                     </Link>
                 </div>
+                <button
+                    onClick={handleGoogleSignIn}
+                    className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 rounded-lg flex items-center justify-center mb-4"
+                >
+                    <img src={google} alt="Google" className="w-5 h-5 mr-2" />
+                    Continue with Google
+                </button>
+
                 <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
 
                 <form onSubmit={handleSubmit}>
@@ -225,6 +134,7 @@ function RegisterPage() {
                             placeholder="Enter your password"
                             required
                         />
+                        <label >Password must be of length 8 or more</label>
                     </div>
 
                     <button
@@ -263,4 +173,4 @@ const Modal = ({ message, onClose }) => {
     );
 };
 
-export {RegisterPage, Modal}
+export { RegisterPage, Modal }

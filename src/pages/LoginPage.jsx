@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
 import google from "../assets/google.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import service from "../services/appwriteConfig";
 import { Modal } from "./RegisterPage";
+import { useAuth } from "../services/AppContext";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const nav=useNavigate();
   const [success, setSuccess] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-
+  const { login, logout } = useAuth()
   const showModalMessage = (message) => {
     setModalMessage(message);
     setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setModalMessage('');
   };
   const handleGoogleSignIn = async () => {
     await service.account
@@ -25,16 +32,22 @@ const Login = () => {
       )
       .then(() => {
         console.log("Google Sign-In successful!");
-        navigate("/"); // Redirect to your app's main page after login
+        ; // Redirect to your app's main page after login
       })
       .catch((err) => {
         showModalMessage("Google Sign-In failed.");
         console.error("Google Sign-In error:", err);
       });
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(formData)
     // Basic validation
     if (!formData.email || !formData.password) {
       showModalMessage("All fields are required!");
@@ -44,17 +57,22 @@ const Login = () => {
     try {
       const user = await service.loginUser(formData.email, formData.password);
       if (user) {
+        login(user)
         showModalMessage(
-          "Registration successful! Please check your email to verify your account."
+          "Login Successfull"
         );
         setFormData({ name: "", email: "", password: "" });
         setTimeout(() => {
-          navigate("/login");
-        }, 3000); // Redirect after 3 seconds
+          closeModal()
+          window.location.reload()
+        }, 2000);
+      }
+      else{
+        showModal("Invalid email or password");
       }
     } catch (err) {
-      showModalMessage("Registration failed. Please try again.");
-      console.error("Registration error:", err);
+      showModalMessage(err || "Login failed. Please try again.");
+      setFormData({ name: '', email: '', password: '' });
     }
   };
   return (
@@ -98,22 +116,33 @@ const Login = () => {
             <label className="block text-gray-700">Email</label>
             <input
               type="email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
+              required
             />
           </div>
+
           <div className="mb-6">
             <label className="block text-gray-700">Password</label>
             <input
               type="password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your password"
+              required
             />
+            <label >Password must be of length 8 or more</label>
           </div>
+
           <div className="flex justify-between items-center mb-6">
-            <a href="#" className="text-blue-500 hover:underline text-sm">
+            <Link to="/forgot-password" className="text-blue-500 hover:underline text-sm">
               Forgot password?
-            </a>
+            </Link>
           </div>
           <button
             type="submit"
@@ -123,6 +152,9 @@ const Login = () => {
           </button>
         </form>
       </div>
+      {showModal && (
+        <Modal message={modalMessage} onClose={closeModal} />
+      )}
     </div>
   );
 };
