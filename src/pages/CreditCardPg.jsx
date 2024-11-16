@@ -28,7 +28,7 @@ function Hero() {
       </div>
 
       {/* Main Heading */}
-      <h1 className="text-[64px]  mb-8 text-center font-primaryBold uppercase  tracking-tight bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
+      <h1 className="text-[64px]  mb-8 text-center font-primaryBold uppercase  tracking-tight bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke">
         THE CARD <br /> FOR CREATORS
       </h1>
 
@@ -72,7 +72,7 @@ function CardComponent() {
                 Your alloy metal card is laser-etched with your logo.
               </p>
             </div>
-            <a className="border border-blue-900 bg-blue-600 text-white text-center uppercase w-full py-2.5 px-6 text-base font-semibold leading-tight transition-all duration-200 flex justify-center items-center md:w-auto lg:w-full cursor-pointer hover:bg-blue-900">
+            <a className=" text-black text-center uppercase w-full py-2.5 px-6 text-base font-semibold leading-tight transition-all duration-200 flex justify-center items-center md:w-auto lg:w-full cursor-pointer button-cardimg rounded-sm hover:opacity-80">
               Apply Now
             </a>
           </div>
@@ -162,15 +162,15 @@ function SecurityFeatures() {
 
 function AccordionItem({ question, answer, isOpen, onClick }) {
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b border-gray-300 py-4">
       <button
         className="flex justify-between items-center w-full text-left text-white"
         onClick={onClick}
       >
-        <span className="text-[32px]">{question}</span>
+        <span className="text-[32px] text-black font-lato">{question}</span>
 
         <span
-          className={`flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 text-white text-3xl transition-transform duration-500 ease-in-out ${
+          className={`flex items-center justify-center w-10 h-10 rounded-full bg-blue-800 text-white text-3xl transition-transform duration-500 ease-in-out ${
             isOpen ? "rotate-45 scale-110" : "hover:scale-105"
           }`}
         >
@@ -182,7 +182,7 @@ function AccordionItem({ question, answer, isOpen, onClick }) {
           isOpen ? "max-h-40" : "max-h-0"
         }`}
       >
-        <p className="mt-4 text-[18px] text-white">{answer}</p>
+        <p className="mt-4 text-[18px] text-black ">{answer}</p>
       </div>
     </div>
   );
@@ -249,12 +249,14 @@ function Accordion() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="bg-purple-800 px-[2.5rem] py-[8rem] text-white">
+      <div className=" px-[2.5rem] py-[8rem] text-white">
         <div className="w-full max-w-[77rem] mr-auto ml-auto">
-          <h2 className="text-[40px] font-primaryBold mb-6">
-            DO YOU HAVE ANY QUESTIONS? WE HAVE GOT ANSWERS
+          <h2 className="text-[40px] font-primaryBold mb-6 text-black bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke">
+            DO YOU HAVE ANY QUESTIONS?
+            <br />
+            WE HAVE GOT ANSWERS
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-4 ">
             {faqData.map((item, index) => (
               <AccordionItem
                 key={index}

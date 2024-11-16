@@ -25,13 +25,15 @@ const LeftRightScroll = () => {
   useEffect(() => {
     setBimg(bottomVideos);
     setTimg(topVideos);
-  }, [bottomVideos,topVideos]);
+  }, [bottomVideos, topVideos]);
 
   return (
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
-          <Marquee speed={50} className="w-full "> {/* Reduced speed */}
+          <Marquee speed={50} className="w-full ">
+            {" "}
+            {/* Reduced speed */}
             {tImg.map((url, index) => (
               <img
                 key={`top-${index}`}
@@ -45,13 +47,15 @@ const LeftRightScroll = () => {
         </div>
       </div>
 
-      <h1 className="text-6xl font-bold font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent">
+      <h1 className="text-6xl font-bold font-primaryBold custom-stroke bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block">
         VanityCard IN THE WILD
       </h1>
 
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
-          <Marquee speed={50} direction="right" className="w-full"> {/* Reduced speed */}
+          <Marquee speed={50} direction="right" className="w-full">
+            {" "}
+            {/* Reduced speed */}
             {bImg.map((url, index) => (
               <img
                 key={`bottom-${index}`}

@@ -33,7 +33,7 @@ body {
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c490351ee26e719721025d_gradient-bg.png");
   background-position: 50% 0;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   line-height: 150%;
 }
 
@@ -42,11 +42,24 @@ html {
 }
 
 .video-scroll {
-  background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
   background-size: cover;
 }
 
 .button {
+  background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin-top: 0;
+  padding: 12px 16px;
+  font-weight: 500;
+  line-height: 14px;
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Smooth transition */
+}
+.button-cardimg {
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png");
   background-position: 50%;
   background-repeat: no-repeat;

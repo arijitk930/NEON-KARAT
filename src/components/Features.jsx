@@ -13,10 +13,10 @@ const Features = () => {
   ];
 
   return (
-    <section className="text-[#1D0CE5]  ">
+    <section className=" ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
+          <h2 className="text-4xl font-extrabold  font-primaryBold ">
             OUR FEATURES
           </h2>
           <p className="text-lg text-gray-600 mt-4">
