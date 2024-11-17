@@ -61,7 +61,8 @@ const CreditCard = ({ theme = "dark" }) => {
       title: "",
       progressBarBg: "bg-gray-700",
       progressBarFill: "bg-blue-500",
-      highlight: "text-blue-600",
+      highlight:
+        "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke-highlight",
       cardBg: "bg-gray-800",
       cardShadow: "shadow-xl",
       hr: "bg-gray-600",
@@ -103,7 +104,7 @@ const CreditCard = ({ theme = "dark" }) => {
         <div className={`sticky top-4`}>
           <h1
             className={
-              "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke font-primaryBold pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left py-5"
+              "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke font-primaryBold pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left py-10"
             }
           >
             Credit Card
@@ -162,14 +163,19 @@ const CreditCard = ({ theme = "dark" }) => {
                   )}
                 </div>
               ))}
-              <div className="flex justify-between items-center mt-6">
+              <div className="flex space-x-9 items-center mt-6">
                 <Link
                   to="/register"
                   className="button shadow-lg hover:shadow-xl text-black rounded-xl px-6 py-2 normal-case text-lg"
                 >
                   Get Started
                 </Link>
-                <button className="text-white">Learn More</button>
+                <Link
+                  to="/login"
+                  className="text-black font-lato hover:text-gray-700"
+                >
+                  Learn More
+                </Link>
                 <button></button>
               </div>
               <br />

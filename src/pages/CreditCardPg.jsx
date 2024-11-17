@@ -92,61 +92,45 @@ function CardComponent() {
 
 function SecurityFeatures() {
   return (
-    <section className="bg-gray-100 py-12 px-8 md:px-16">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold uppercase mb-8 text-gray-900">
-          Your Suit of Armor
+    <section className="bg-gray-100 py-12 px-8 md:px-16 w-full">
+      <div className="relative max-w-7xl mx-auto">
+        <h2 className="text-[50px] leading-tight uppercase mb-10 text-gray-900 font-primaryBold">
+          Your Suit
+          <br />
+          of Armor
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 mt-8">
           {/* Card 1 */}
-          <div className="border border-purple-500 p-6 rounded-lg flex flex-col items-center text-center">
-            <div className="mb-4">
+          <div className="relative border border-black bg-white p-8">
+            <div className="absolute -top-10 left-0 transform -translate-x-1/2 flex justify-center items-center">
               {/* Security Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 text-purple-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 11c0-1.1.9-2 2-2s2 .9 2 2c0 .78-.4 1.42-1 1.72l-.1.07A2 2 0 0013 16h-2a2 2 0 01-1.9-2.79l.1-.07A1.99 1.99 0 0112 11z"
-                />
-              </svg>
+              <img
+                src="https://t4.ftcdn.net/jpg/03/02/56/89/360_F_302568940_mSFYBQRQkH4DTjQOhhV1CUREcYTV4hpg.jpg"
+                alt="Security"
+                className="w-16 h-16"
+              />
             </div>
-            <h3 className="text-xl font-extrabold uppercase text-purple-700 mb-2">
+            <h3 className="text-xl font-extrabold uppercase text-black mb-2 font-primaryBold">
               You are Safe With Us
             </h3>
             <p className="text-gray-700">
               We secure all your data with 256-bit encryption and all
-              transactions you make are verified through Visas fraud algorithms.
+              transactions you make are verified through Visa fraud algorithms.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="border border-purple-500 p-6 rounded-lg flex flex-col items-center text-center">
-            <div className="mb-4">
+          <div className="relative border border-black bg-white p-8">
+            <div className="absolute -top-10 left-0 transform -translate-x-1/2 flex justify-center items-center">
               {/* Support Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 text-purple-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M16 14h-2a3 3 0 00-6 0H6a2 2 0 00-2 2v4a2 2 0 002 2h1.5M8 20h.5M17.25 20H20a2 2 0 002-2v-4a2 2 0 00-2-2h-1.25m-5.5 0a3 3 0 013-3h3a3 3 0 013 3m-8 0H12m-1 0h-.5"
-                />
-              </svg>
+              <img
+                src="https://t3.ftcdn.net/jpg/09/21/81/20/360_F_921812069_Ww2uaj7giOgFoQgu2eWI6AcJfSwLEi2B.jpg"
+                alt="Support"
+                className="w-16 h-16"
+              />
             </div>
-            <h3 className="text-xl font-extrabold uppercase text-purple-700 mb-2">
+            <h3 className="text-xl font-extrabold uppercase text-black mb-2 font-primaryBold">
               Real Support at Your Fingertips
             </h3>
             <p className="text-gray-700">
@@ -164,13 +148,14 @@ function AccordionItem({ question, answer, isOpen, onClick }) {
   return (
     <div className="border-b border-gray-300 py-4">
       <button
-        className="flex justify-between items-center w-full text-left text-white"
+        className="flex justify-between items-center w-full text-left text-white group"
         onClick={onClick}
       >
-        <span className="text-[32px] text-black font-lato">{question}</span>
-
+        <span className="text-[32px] text-gray-800 font-lato group-hover:text-black transition-colors duration-300">
+          {question}
+        </span>
         <span
-          className={`flex items-center justify-center w-10 h-10 rounded-full bg-blue-800 text-white text-3xl transition-transform duration-500 ease-in-out ${
+          className={`flex items-center justify-center w-10 h-10 rounded-full  bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center  text-black text-4xl transition-transform duration-500 ease-in-out group-hover:bg-blue-600 ${
             isOpen ? "rotate-45 scale-110" : "hover:scale-105"
           }`}
         >
@@ -179,17 +164,19 @@ function AccordionItem({ question, answer, isOpen, onClick }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-40" : "max-h-0"
+          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="mt-4 text-[18px] text-black ">{answer}</p>
+        <p className="mt-4 text-[18px] text-black transition-opacity duration-500 ease-in-out">
+          {answer}
+        </p>
       </div>
     </div>
   );
 }
 
 function Accordion() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = React.useState(null);
 
   const faqData = [
     {
@@ -249,14 +236,14 @@ function Accordion() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className=" px-[2.5rem] py-[8rem] text-white">
+      <div className="px-[2.5rem] py-[8rem] text-white">
         <div className="w-full max-w-[77rem] mr-auto ml-auto">
           <h2 className="text-[40px] font-primaryBold mb-6 text-black bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke">
             DO YOU HAVE ANY QUESTIONS?
             <br />
             WE HAVE GOT ANSWERS
           </h2>
-          <div className="space-y-4 ">
+          <div className="space-y-4">
             {faqData.map((item, index) => (
               <AccordionItem
                 key={index}

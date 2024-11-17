@@ -21,13 +21,13 @@ function ComparisonComponent() {
 
   const [currentSection, setCurrentSection] = useState(0);
 
-  const users=[
+  const users = [
     "https://i.pravatar.cc/250?u=mail@ashallendesign.co.uk",
-    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/w9zdu4vxqb7iebv8ysyk.jpg',
+    "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/w9zdu4vxqb7iebv8ysyk.jpg",
     "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
-    'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg',
-    "https://avatar.iran.liara.run/public/boy?username=Bob"
-  ]
+    "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg",
+    "https://avatar.iran.liara.run/public/boy?username=Bob",
+  ];
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSection(
@@ -39,7 +39,7 @@ function ComparisonComponent() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-between p-8 md:p-16 space-y-8 md:space-y-0 bg-white text-gray-800">
+    <div className="flex mt-10 flex-col md:flex-row items-center md:items-start justify-between p-8 md:p-16 space-y-8 md:space-y-0 bg-white text-gray-800">
       {/* Left Side Text Content */}
       <div className="md:w-1/3 text-center md:text-left space-y-4">
         <h1 className="text-5xl font-bold leading-tight font-primaryBold">
@@ -51,7 +51,7 @@ function ComparisonComponent() {
           similar to you. See what you are doing better and where you can
           improve.
         </p>
-        <button className="px-6 py-3 mt-4 text-white font-semibold rounded bg-gradient-to-r from-purple-500 to-blue-500 bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-300 ease-in-out">
+        <button className="px-6 py-3 mt-4 text-black font-semibold rounded button bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-300 ease-in-out">
           Try It Now
         </button>
       </div>
@@ -94,8 +94,9 @@ function ComparisonComponent() {
               key={index}
               src={imgSrc}
               alt="User"
-              className={`w-10 h-10 rounded-full ${index === 2 ? "border-4 border-blue-500" : ""
-                }`}
+              className={`w-10 h-10 rounded-full ${
+                index === 2 ? "border-4 border-blue-500" : ""
+              }`}
             />
           ))}
         </div>
@@ -111,8 +112,9 @@ function ComparisonComponent() {
           {[10, 15, 8, 25, 18, 10, 5].map((height, index) => (
             <div
               key={index}
-              className={`w-8 rounded-t ${index === 3 ? "bg-blue-500" : "bg-gray-300"
-                }`}
+              className={`w-8 rounded-t ${
+                index === 3 ? "bg-blue-500" : "bg-gray-300"
+              }`}
               style={{ height: `${height * 3}px` }}
             ></div>
           ))}
@@ -131,16 +133,15 @@ function ComparisonComponent() {
   );
 }
 
-
 const PlatformSelector = () => {
-  const [selectedPlatform, setSelectedPlatform] = useState('tiktok');
+  const [selectedPlatform, setSelectedPlatform] = useState("tiktok");
   const [audienceRange, setAudienceRange] = useState(500000);
 
   const platforms = [
-    { id: 'youtube', label: 'YOUTUBE' },
-    { id: 'instagram', label: 'INSTAGRAM' },
-    { id: 'tiktok', label: 'TIKTOK' },
-    { id: 'Twitch', label: 'TWITCH' },
+    { id: "youtube", label: "YOUTUBE" },
+    { id: "instagram", label: "INSTAGRAM" },
+    { id: "tiktok", label: "TIKTOK" },
+    { id: "Twitch", label: "TWITCH" },
   ];
 
   return (
@@ -152,9 +153,10 @@ const PlatformSelector = () => {
             key={platform.id}
             onClick={() => setSelectedPlatform(platform.id)}
             className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 
-              ${selectedPlatform === platform.id
-                ? 'bg-blue-600 text-white shadow-lg'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ${
+                selectedPlatform === platform.id
+                  ? "button text-black shadow-lg"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
           >
             {platform.label}
@@ -174,7 +176,7 @@ const PlatformSelector = () => {
           step={100000}
           value={audienceRange}
           onChange={(e) => setAudienceRange(Number(e.target.value))}
-          className="w-full accent-blue-600"
+          className="w-full accent-purple-600"
         />
         <div className="flex justify-between text-sm text-gray-600 mt-3">
           <span>0-100K</span>
@@ -189,22 +191,21 @@ const PlatformSelector = () => {
     </div>
   );
 };
-import { PieChart, Pie, Cell } from 'recharts';
-
+import { PieChart, Pie, Cell } from "recharts";
 
 function RevenueBreakdown() {
   const totalRevenue = 314713;
 
   const data = [
-    { name: 'Brand Deals', value: 29.2, color: '#6366F1' },
-    { name: 'Platform Revenue', value: 37, color: '#818CF8' },
-    { name: 'E-Commerce & Memberships', value: 20.3, color: '#1E1B4B' },
-    { name: 'Recurring Payroll', value: 8.5, color: '#C7D2FE' },
-    { name: 'Other', value: 5, color: '#000000' }
+    { name: "Brand Deals", value: 29.2, color: "#6366F1" },
+    { name: "Platform Revenue", value: 37, color: "#818CF8" },
+    { name: "E-Commerce & Memberships", value: 20.3, color: "#1E1B4B" },
+    { name: "Recurring Payroll", value: 8.5, color: "#C7D2FE" },
+    { name: "Other", value: 5, color: "#000000" },
   ];
   return (
-    <div className="min-h-screen bg-purple-500 flex items-center justify-center pt-0 p-4">
-      <div className="bg-white rounded-2xl p-6 flex gap-6 max-w-4xl w-full">
+    <div className=" flex items-center justify-center pt-4 p-4 ">
+      <div className="bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c490351ee26e719721025d_gradient-bg.png')] rounded-2xl p-6 flex gap-6 max-w-6xl w-full border border-gray-300 shadow-xl bg-no-repeat bg-cover ">
         {/* Left side - Donut Chart */}
         <div className="relative flex-1 flex items-center justify-center">
           <PieChart width={300} height={300}>
@@ -223,19 +224,27 @@ function RevenueBreakdown() {
             </Pie>
           </PieChart>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-[#6366F1] text-3xl font-bold">${totalRevenue.toLocaleString()}</span>
+            <span className="text-[#6366F1] text-3xl font-bold">
+              ${totalRevenue.toLocaleString()}
+            </span>
             <span className="text-gray-600 text-xs mt-1">TOTAL REVENUE</span>
           </div>
         </div>
 
         {/* Right side - Legend and Details */}
         <div className="flex-1 bg-black rounded-xl p-6 text-white">
-          <h2 className="font-primaryBold text-3xl font-bold mb-6">REVENUE<br />BREAKDOWN</h2>
+          <h2 className="font-primaryBold text-3xl font-bold mb-6">
+            REVENUE
+            <br />
+            BREAKDOWN
+          </h2>
 
           <div className="space-y-4">
             {data.map((item, index) => (
               <div key={index} className="flex justify-between items-center">
-                <span className="text-gray-400 uppercase text-sm">{item.name}</span>
+                <span className="text-gray-400 uppercase text-sm">
+                  {item.name}
+                </span>
                 <span className="text-xl">{item.value}%</span>
               </div>
             ))}
@@ -243,7 +252,9 @@ function RevenueBreakdown() {
 
           <div className="mt-6">
             <div className="text-gray-400 text-sm mb-1">TOTAL INCOME</div>
-            <div className="text-4xl font-bold mb-4">${totalRevenue.toLocaleString()}</div>
+            <div className="text-4xl font-bold mb-4">
+              ${totalRevenue.toLocaleString()}
+            </div>
 
             <button className="w-full bg-[#6366F1] text-white py-3 rounded-lg text-base font-semibold hover:bg-[#4F46E5] transition-colors">
               Try It Now
@@ -259,6 +270,4 @@ function RevenueBreakdown() {
   );
 }
 
-
 export { PlatformSelector, ComparisonComponent, RevenueBreakdown };
-

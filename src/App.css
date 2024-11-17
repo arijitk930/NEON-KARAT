@@ -27,6 +27,15 @@
   border: none;
   cursor: pointer;
 }
+.icon-container {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  width: 64px; /* Adjust size as needed */
+  height: 64px;
+}
 
 body {
   color: var(--black);
@@ -110,5 +119,9 @@ html {
 }
 .custom-stroke {
   -webkit-text-stroke: 2px black; /* Adjust color and width */
+  color: transparent;
+}
+.custom-stroke-highlight {
+  -webkit-text-stroke: 1px gray; /* Adjust color and width */
   color: transparent;
 }

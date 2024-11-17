@@ -52,7 +52,7 @@ const TaxComponent = () => {
         {/* Right Side Text */}
         <div className="w-full md:w-1/2 md:pl-8 flex flex-col justify-center text-center md:text-left">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-blue-600 font-primaryBold">
+            <h2 className="text-2xl font-bold text-black font-primaryBold">
               PAY LESS TAX
             </h2>
             <p className="text-gray-800 mt-2">
@@ -60,7 +60,7 @@ const TaxComponent = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-blue-600 font-primaryBold">
+            <h2 className="text-2xl font-bold text-black font-primaryBold">
               NO FEES
             </h2>
             <p className="text-gray-800 mt-2">
