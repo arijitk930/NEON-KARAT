@@ -4,18 +4,19 @@ import service from "../services/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 
 const TopBar = ({ userName = "Siddhes Das", userInitials = "SD" }) => {
-  const nav=useNavigate();
-  const logoutUser=async ()=>{
-      try {
-        await service.account.deleteSession('current');
-        logout();
-        nav("/");
-      } catch (error) {
-        console.log(error)
-      }
-  }
+  const nav = useNavigate();
   const { logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+
+  const logoutUser = async () => {
+    try {
+      await service.account.deleteSession("current");
+      logout();
+      nav("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // Toggle dropdown visibility
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -24,7 +25,7 @@ const TopBar = ({ userName = "Siddhes Das", userInitials = "SD" }) => {
   const handleClickOutside = () => setIsOpen(false);
 
   return (
-    <div className="flex justify-between items-center mb-8 p-4 bg-gray-50 rounded-lg shadow-md relative">
+    <div className="flex justify-between items-center p-4 bg-gray-50 shadow-md relative sticky top-0 z-50 ml-64">
       {/* Greeting text */}
       <h2 className="text-2xl font-semibold text-gray-800">{userName} —</h2>
 

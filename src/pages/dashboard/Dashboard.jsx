@@ -1,6 +1,8 @@
 const Dashboard = () => {
   return (
-    <>
+    <div className="ml-64 p-4">
+      {" "}
+      {/* Add left margin to make room for Sidebar */}
       {/* Card Section */}
       <div className="bg-blue-100 p-6 rounded-lg mb-8 shadow">
         <h3 className="text-xl font-semibold mb-4">You are nearly there</h3>
@@ -17,16 +19,15 @@ const Dashboard = () => {
           Continue Application
         </button>
       </div>
-
       {/* Next Steps Section */}
       <div className="bg-gray-50 p-6 rounded-lg shadow">
         <h4 className="text-lg font-semibold mb-2">Next Steps</h4>
         <p>
-          You have applied for the Vanity card! We all review your application
+          You have applied for the Vanity card! We will review your application
           and provide an update in the next 7 business days.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 
