@@ -20,11 +20,11 @@ function Hero() {
       {/* Card Display */}
       <div className="relative flex justify-center space-x-4 mb-10">
         {/* Left Card */}
-        <div className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform -rotate-12 shadow-xl"></div>
+        <img className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform -rotate-12 shadow-xl" src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg" alt="" />
         {/* Center Card */}
-        <div className="w-[260px] h-[160px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl shadow-xl z-10"></div>
+        <img className="w-[260px] h-[160px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl shadow-xl z-10" src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg"/>
         {/* Right Card */}
-        <div className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform rotate-12 shadow-xl"></div>
+        <img src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg" className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform rotate-12 shadow-xl"/>
       </div>
 
       {/* Main Heading */}

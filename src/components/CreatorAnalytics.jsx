@@ -133,11 +133,10 @@ const CreatorAnalytics = () => {
         <button className="w-full flex items-center justify-between p-4 bg-gray-50 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors">
           <div>
             <h3 className="text-base font-medium text-gray-900">
-              Monetization settings
+              Social media account settings 
             </h3>
             <p className="text-sm text-gray-500">
-              Connect a bank account to set a subscription price or start
-              accepting tips.
+              Connect a social media account and get started.
             </p>
           </div>
           <ChevronRight className="w-5 h-5" />

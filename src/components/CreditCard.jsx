@@ -99,7 +99,7 @@ const CreditCard = ({ theme = "dark" }) => {
   }, []);
 
   return (
-    <div className={`relative min-h-screen py-20 `}>
+    <div className={`relative min-h-screen py-5 `}>
       <div className="max-w-5xl mx-auto px-4 lg:px-8">
         <div className={`sticky top-4`}>
           <h1

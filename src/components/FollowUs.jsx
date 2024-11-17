@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaInstagram, FaTiktok, FaYoutube, FaNewspaper } from "react-icons/fa";
 
 const FollowUs = () => {
