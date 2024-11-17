@@ -5,7 +5,7 @@ const Sidebar = () => {
     <div className="w-64 bg-gray-100 h-screen border-r border-gray-300 flex flex-col fixed top-0 left-0">
       <div className="flex justify-center my-6">
         <Link
-          to="/"
+          to="/dashboard"
           className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text fade-in-scale"
         >
           <img
