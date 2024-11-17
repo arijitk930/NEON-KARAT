@@ -61,14 +61,16 @@ const themeClasses = {
     background: "bg-white",
     title: "text-black",
     text: "text-gray-800",
-    highlight: "text-blue-600",
+    highlight:
+      "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke-highlight",
     hr: "border-gray-300",
   },
   dark: {
     background: "bg-gray-900",
     title: "text-white",
     text: "text-gray-400",
-    highlight: "text-blue-400",
+    highlight:
+      "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block stroke",
     hr: "border-gray-700",
   },
 };

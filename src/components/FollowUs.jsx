@@ -4,8 +4,8 @@ const FollowUs = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[77rem] mx-auto px-6 md:px-10 py-10">
       {/* Follow Us Text */}
-      <div className="flex items-center space-x-2 mb-6 md:mb-0">
-        <span className="text-indigo-600 font-bold text-[36px] sm:text-[48px] md:text-[60px] font-primaryBold">
+      <div className="flex items-center space-x-8 mb-6 md:mb-0">
+        <span className="custom-stroke bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block font-bold text-[36px] sm:text-[48px] md:text-[60px] font-primaryBold">
           FOLLOW
         </span>
         <span className="text-gray-900 font-bold text-[36px] sm:text-[48px] md:text-[60px] font-primaryBold">

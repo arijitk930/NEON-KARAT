@@ -11,7 +11,7 @@ const Sidebar = () => {
         <Link to="/profileInsights" className="p-3 rounded hover:bg-gray-200">
           Insights
         </Link>
-        <Link to="#" className="p-3 rounded hover:bg-gray-200">
+        {/* <Link to="#" className="p-3 rounded hover:bg-gray-200">
           Referrals
         </Link>
         <Link to="#" className="p-3 rounded hover:bg-gray-200">
@@ -19,7 +19,7 @@ const Sidebar = () => {
         </Link>
         <Link to="#" className="p-3 rounded hover:bg-gray-200">
           Account Details
-        </Link>
+        </Link> */}
       </nav>
     </div>
   );
