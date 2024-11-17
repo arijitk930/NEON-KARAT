@@ -12,7 +12,7 @@ function RegisterPage() {
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setModalMessage] = useState('');
     const navigate = useNavigate();
-    const {login,logout}=useAuth()
+    const { login, logout } = useAuth()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,8 +26,7 @@ function RegisterPage() {
             showModalMessage('All fields are required!');
             return;
         }
-        else if(formData.password.length<8)
-        {
+        else if (formData.password.length < 8) {
             showModalMessage('Password must be of length 8 or more');
             return;
         }
@@ -36,15 +35,15 @@ function RegisterPage() {
             const user = await service.registerUser({ ...formData });
             if (user) {
                 showModalMessage('Registration successful! Please check your email to verify your account.');
-                
+
                 setTimeout(() => {
                     closeModal()
-                    service.loginUser(formData.email,formData.password);
+                    service.loginUser(formData.email, formData.password);
                     setFormData({ name: '', email: '', password: '' });
                     login(user);
                     window.location.reload()
                 }, 3000); // Redirect after 3 seconds
-                
+
             }
         } catch (err) {
             showModalMessage('Registration failed. Please try again. Reason may be duplicate email id or commonly used passwords');
@@ -53,20 +52,20 @@ function RegisterPage() {
     };
     const handleGoogleSignIn = async () => {
         await service.account
-          .createOAuth2Session(
-            "google",
-            "http://localhost:5173",
-            "http://localhost:5173/login"
-          )
-          .then(() => {
-            console.log("Google Sign-In successful!");
-            navigate("/"); // Redirect to your app's main page after login
-          })
-          .catch((err) => {
-            showModalMessage("Google Sign-In failed.");
-            console.error("Google Sign-In error:", err);
-          });
-      };
+            .createOAuth2Session(
+                "google",
+                "http://localhost:5173",
+                "http://localhost:5173/login"
+            )
+            .then(() => {
+                console.log("Google Sign-In successful!");
+                navigate("/"); // Redirect to your app's main page after login
+            })
+            .catch((err) => {
+                showModalMessage("Google Sign-In failed.");
+                console.error("Google Sign-In error:", err);
+            });
+    };
     const showModalMessage = (message) => {
         setModalMessage(message);
         setShowModal(true);
@@ -93,7 +92,11 @@ function RegisterPage() {
                     <img src={google} alt="Google" className="w-5 h-5 mr-2" />
                     Continue with Google
                 </button>
-
+                <div className="flex items-center my-4">
+                    <hr className="w-full border-gray-300" />
+                    <span className="px-3 text-gray-500">OR</span>
+                    <hr className="w-full border-gray-300" />
+                </div>
                 <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
 
                 <form onSubmit={handleSubmit}>
@@ -155,13 +158,19 @@ function RegisterPage() {
 }
 
 const Modal = ({ message, onClose }) => {
-    if (!message) return null;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
                 <h2 className="text-xl font-bold mb-4">Notification</h2>
-                <p className="text-gray-700">{message}</p>
+                {message != null ? <p className="text-gray-700">message</p> : (<div>
+                    <div class="flex items-center space-x-2">
+
+                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-500"></div>
+
+                        <span className="text-gray-700 font-semibold">Loading...</span>
+                    </div>
+                </div>)}
                 <button
                     onClick={onClose}
                     className="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
