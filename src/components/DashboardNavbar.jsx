@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.png";
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-gray-100 h-full border-r border-gray-300 flex flex-col ">
+    <div className="w-64 bg-gray-100 h-screen border-r border-gray-300 flex flex-col fixed top-0 left-0">
       <div className="flex justify-center my-6">
         <Link
           to="/"
@@ -18,7 +18,7 @@ const Sidebar = () => {
           </span>
         </Link>
       </div>
-      <nav className="flex flex-col space-y-2 p-5 font-lato">
+      <nav className="flex flex-col space-y-2 p-5">
         <Link to="/dashboard" className="p-3 rounded hover:bg-gray-200">
           Home
         </Link>
