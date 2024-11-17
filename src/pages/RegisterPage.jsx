@@ -80,9 +80,18 @@ function RegisterPage() {
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex justify-center mb-6">
-                    <Link to="/" className="flex items-center text-2xl font-primaryBold text-gradient">
-                        <img src={logo} alt="Logo" className="h-10 w-15 transform scale-150 -mr-2" />
-                        <span>Anity Card</span>
+                    <Link
+                        to="/"
+                        className="flex items-center text-2xl font-primaryBold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text fade-in-scale"
+                    >
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            className="h-10 w-15 transform scale-150 -mr-2 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-6"
+                        />
+                        <span className="transition-transform duration-300 ease-in-out bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block">
+                            anity Card
+                        </span>
                     </Link>
                 </div>
                 <button
