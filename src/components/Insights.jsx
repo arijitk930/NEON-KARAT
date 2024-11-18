@@ -1,4 +1,4 @@
-import { useState } from "react"; // Ensure this is correct
+import { useState, useEffect, useRef } from "react"; // Ensure this is correct
 import { Link } from "react-router-dom";
 
 const data = [
@@ -76,8 +76,20 @@ const themeClasses = {
 };
 
 export default function Insights() {
-  const [activeCard, setActiveCard] = useState(0); // Initialize with 0
-  const [theme] = useState("light"); // Initialize with 'light'
+  const [activeCard, setActiveCard] = useState(0);
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % data.length); // Cycle to the next section
+    }, 5000); // Change the interval time as needed (5000ms = 5 seconds)
+
+    return () => clearInterval(timer); // Clear the timer on component unmount
+  }, []);
+
+  const handleCardClick = (index) => {
+    setActiveCard(index);
+  };
 
   return (
     <div className="relative min-h-screen mt-20">
@@ -96,49 +108,47 @@ export default function Insights() {
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="transition-all duration-500 rounded-lg "
+                  ref={(el) => (sectionsRef.current[index] = el)}
+                  className={`transition-all duration-500 cursor-pointer rounded-lg ${
+                    activeCard === index ? "opacity-100" : "opacity-50"
+                  }`}
                   style={{
-                    opacity: activeCard === index ? 1 : 0.7,
                     transform:
                       activeCard === index
                         ? "translateY(0)"
                         : "translateY(10px)",
                   }}
+                  onClick={() => handleCardClick(index)} // Click handler to activate card
                 >
-                  <button
+                  <div
                     className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
-                      themeClasses[theme].title
+                      themeClasses.light.title
                     } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
-                    onClick={() => setActiveCard(index)}
                   >
                     <span>{item.normal}</span>
-                    <span className={themeClasses[theme].highlight}>
+                    <span className={themeClasses.light.highlight}>
                       {item.highlighted}
                     </span>
-                  </button>
+                  </div>
 
                   {activeCard !== index && (
                     <hr
-                      className={` ${themeClasses[theme].hr} w-full shadow-lg rounded-xl`}
+                      className={`${themeClasses.light.hr} w-full shadow-lg rounded-xl`}
                     />
                   )}
 
                   {activeCard === index && (
                     <div
                       className="transition-all duration-500 mt-4"
-                      style={{
-                        opacity: 1,
-                        transform: "translateY(10px)",
-                      }}
+                      style={{ opacity: 1, transform: "translateY(10px)" }}
                     >
                       <p
-                        className={`mt-4 text-sm md:text-base lg:text-lg ${themeClasses[theme].text}`}
+                        className={`mt-4 text-sm md:text-base lg:text-lg ${themeClasses.light.text}`}
                       >
                         {item.description}
                       </p>
-
                       <hr
-                        className={`my-6 ${themeClasses[theme].hr} shadow-lg rounded-xl`}
+                        className={`my-6 ${themeClasses.light.hr} shadow-lg rounded-xl`}
                       />
                     </div>
                   )}
@@ -146,7 +156,7 @@ export default function Insights() {
               ))}
               <Link
                 to="/register"
-                className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300   hover:border-2 hover:border-purple-700 font-bold text-center"
+                className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300 hover:border-2 hover:border-purple-700 font-bold text-center"
               >
                 GET STARTED
               </Link>
@@ -160,7 +170,7 @@ export default function Insights() {
                 transform: activeCard !== null ? "scale(1)" : "scale(0.95)",
               }}
             >
-              {data[activeCard].visualization}
+              {data[activeCard]?.visualization}
             </div>
           </div>
         </div>

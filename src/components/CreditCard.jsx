@@ -55,6 +55,7 @@ const content = [
     ),
   },
 ];
+
 const CreditCard = ({ theme = "dark" }) => {
   const themeClasses = {
     dark: {
@@ -71,50 +72,39 @@ const CreditCard = ({ theme = "dark" }) => {
   };
 
   const [activeCard, setActiveCard] = useState(0);
-  const containerRef = useRef(null);
   const cardRefs = useRef([]);
+  const timerRef = useRef(null);
 
+  // Automatically cycle through cards
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = cardRefs.current.findIndex(
-              (ref) => ref === entry.target
-            );
-            if (index !== -1) {
-              setActiveCard(index);
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+    startAutoCycle();
 
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
+    return () => clearInterval(timerRef.current); // Clean up the interval on unmount
   }, []);
 
+  const startAutoCycle = () => {
+    clearInterval(timerRef.current); // Clear any existing interval
+    timerRef.current = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % content.length);
+    }, 5000); // 5000ms interval; change as needed
+  };
+
+  const handleCardClick = (index) => {
+    setActiveCard(index);
+    startAutoCycle(); // Restart cycle when user clicks
+  };
+
   return (
-    <div className={`relative min-h-screen py-4 `}>
+    <div className={`relative min-h-screen py-4`}>
       <div className="max-w-5xl mx-auto px-4 lg:px-8">
         <div className={`sticky top-4`}>
-          <h1
-            className={
-              "bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke font-primaryBold pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left py-10"
-            }
-          >
+          <h1 className="bg-[url('https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c4904a072d7e734d9f4a1b_gradient.png')] text-transparent bg-clip-text bg-cover bg-center inline-block custom-stroke font-primaryBold pt-6 font-bold text-xl md:text-6xl lg:text-6xl text-center md:text-left py-10">
             Credit Card
           </h1>
           <br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left side content */}
             <div className="space-y-6">
-              {" "}
-              {/* Adjust space between items */}
               {content.map((item, index) => (
                 <div
                   className="w-full transition-all duration-500"
@@ -126,14 +116,14 @@ const CreditCard = ({ theme = "dark" }) => {
                         ? "translateY(0)"
                         : "translateY(10px)",
                   }}
+                  onClick={() => handleCardClick(index)} // Handle user click
                 >
                   <button
-                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-2 transition-opacity duration-300  ${
+                    className={`text-xl md:text-2xl lg:text-3xl font-bold mb-2 transition-opacity duration-300 ${
                       activeCard === index ? "opacity-100" : "opacity-30"
                     }`}
-                    onClick={() => setActiveCard(index)} // Clicking the title expands it
                   >
-                    <span className="">{item.normal}</span>
+                    <span>{item.normal}</span>
                     <span className={themeClasses[theme].highlight}>
                       {item.highlighted}
                     </span>
@@ -176,14 +166,12 @@ const CreditCard = ({ theme = "dark" }) => {
                 >
                   Learn More
                 </Link>
-                <button></button>
               </div>
               <br />
               <p className="w-full text-white text-sm">
                 VanityCard is a financial technology company and not a bank. The
-                VanityCard Visa®️ Business Credit Card is issued by by Cross
-                River Bank, Member FDIC, and pursuant to a license from Visa️
-                USA
+                VanityCard Visa®️ Business Credit Card is issued by Cross River
+                Bank, Member FDIC, and pursuant to a license from Visa️ USA.
               </p>
             </div>
 
