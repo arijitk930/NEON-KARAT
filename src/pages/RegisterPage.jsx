@@ -182,7 +182,7 @@ const Modal = ({ message, onClose }) => {
                 </div>)}
                 <button
                     onClick={onClose}
-                    className="mt-6 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+                    className="mt-6 text-white py-2 px-4 rounded button transition duration-200"
                 >
                     OK
                 </button>

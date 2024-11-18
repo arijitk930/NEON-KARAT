@@ -78,7 +78,7 @@ function InsightsCalculate() {
           <div className="relative">
             {/* Timeline */}
             <div
-              className={`absolute left-4 sm:left-8 top-0 bottom-0 w-1 bg-indigo-600 transition-transform duration-700 ${
+              className={`absolute left-4 sm:left-8 top-0 bottom-0 w-1 bg-purple-600 transition-transform duration-700 ${
                 isAnimated ? "scale-y-100" : "scale-y-0"
               } origin-top`}
             />
@@ -93,7 +93,7 @@ function InsightsCalculate() {
             >
               <div className="flex items-center mb-4 sm:mb-6">
                 <div className="absolute left-0">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
                     1
                   </div>
                 </div>
@@ -123,7 +123,7 @@ function InsightsCalculate() {
             >
               <div className="flex items-center mb-4 sm:mb-6">
                 <div className="absolute left-0">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
                     2
                   </div>
                 </div>
@@ -156,7 +156,7 @@ function InsightsCalculate() {
             >
               <div className="flex items-center mb-4 sm:mb-6">
                 <div className="absolute left-0">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold transition-transform duration-500 transform hover:scale-105">
                     3
                   </div>
                 </div>

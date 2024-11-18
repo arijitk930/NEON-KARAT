@@ -3,19 +3,19 @@ import { useState, useEffect } from "react";
 function ComparisonComponent() {
   const graphSections = [
     <>
-      <div className="absolute w-2/3 h-2/3 bg-blue-500 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-blue-300 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
       <div className="absolute w-2/3 h-2/3 bg-gray-400 rounded-full clip-path-pie-50 transition-all duration-1000 ease-in-out"></div>
-      <div className="absolute w-2/3 h-2/3 bg-black rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-purple-500  rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
     </>,
     <>
       <div className="absolute w-2/3 h-2/3 bg-gray-400 rounded-full clip-path-pie-50 transition-all duration-1000 ease-in-out"></div>
-      <div className="absolute w-2/3 h-2/3 bg-blue-500 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
-      <div className="absolute w-2/3 h-2/3 bg-black rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-purple-500 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-blue-300 rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
     </>,
     <>
       <div className="absolute w-2/3 h-2/3 bg-gray-400 rounded-full clip-path-pie-50 transition-all duration-1000 ease-in-out"></div>
-      <div className="absolute w-2/3 h-2/3 bg-black rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
-      <div className="absolute w-2/3 h-2/3 bg-blue-500 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-blue-300 rounded-full clip-path-pie-75 transition-all duration-1000 ease-in-out"></div>
+      <div className="absolute w-2/3 h-2/3 bg-purple-500 rounded-full clip-path-pie-25 transition-all duration-1000 ease-in-out"></div>
     </>,
   ];
 
@@ -95,7 +95,7 @@ function ComparisonComponent() {
               src={imgSrc}
               alt="User"
               className={`w-10 h-10 rounded-full ${
-                index === 2 ? "border-4 border-blue-500" : ""
+                index === 2 ? "border-4 border-purple-300" : ""
               }`}
             />
           ))}
@@ -113,7 +113,7 @@ function ComparisonComponent() {
             <div
               key={index}
               className={`w-8 rounded-t ${
-                index === 3 ? "bg-blue-500" : "bg-gray-300"
+                index === 3 ? "bg-purple-300" : "bg-gray-300"
               }`}
               style={{ height: `${height * 3}px` }}
             ></div>
@@ -121,7 +121,7 @@ function ComparisonComponent() {
         </div>
         <div className="flex justify-center space-x-2 text-sm">
           <span className="flex items-center">
-            <div className="w-3 h-3 bg-blue-500 rounded-full mr-1"></div> YOUR
+            <div className="w-3 h-3 bg-purple-500 rounded-full mr-1"></div> YOUR
             INCOME
           </span>
           <span className="flex items-center">
@@ -197,11 +197,11 @@ function RevenueBreakdown() {
   const totalRevenue = 314713;
 
   const data = [
-    { name: "Brand Deals", value: 29.2, color: "#6366F1" },
-    { name: "Platform Revenue", value: 37, color: "#818CF8" },
-    { name: "E-Commerce & Memberships", value: 20.3, color: "#1E1B4B" },
-    { name: "Recurring Payroll", value: 8.5, color: "#C7D2FE" },
-    { name: "Other", value: 5, color: "#000000" },
+    { name: "Brand Deals", value: 29.2, color: "#35e5ab" },
+    { name: "Platform Revenue", value: 37, color: "#E0B0FF" },
+    { name: "E-Commerce & Memberships", value: 20.3, color: "#f369a8" },
+    { name: "Recurring Payroll", value: 8.5, color: "#eef472" },
+    { name: "Other", value: 5, color: "#f0ba4e" },
   ];
   return (
     <div className=" flex items-center justify-center pt-4 p-4 ">
@@ -224,7 +224,7 @@ function RevenueBreakdown() {
             </Pie>
           </PieChart>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-[#6366F1] text-3xl font-bold">
+            <span className="text-[#bb32cd] text-3xl font-bold">
               ${totalRevenue.toLocaleString()}
             </span>
             <span className="text-gray-600 text-xs mt-1">TOTAL REVENUE</span>
@@ -256,7 +256,7 @@ function RevenueBreakdown() {
               ${totalRevenue.toLocaleString()}
             </div>
 
-            <button className="w-full bg-[#6366F1] text-white py-3 rounded-lg text-base font-semibold hover:bg-[#4F46E5] transition-colors">
+            <button className="w-full button px-4 py-4  rounded-xl  transform text-black">
               Try It Now
             </button>
 
