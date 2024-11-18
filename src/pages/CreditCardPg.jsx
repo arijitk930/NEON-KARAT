@@ -1,6 +1,7 @@
 import CreditCard from "../components/CreditCard";
 import React, { useState } from "react";
 import TaxCommunity from "../components/TaxCommunity";
+import cardImg from "../assets/card-webp.webp";
 
 export default function CreditCardPg() {
   return (
@@ -20,11 +21,21 @@ function Hero() {
       {/* Card Display */}
       <div className="relative flex justify-center space-x-4 mb-10">
         {/* Left Card */}
-        <img className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform -rotate-12 shadow-xl" src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg" alt="" />
+        <img
+          className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform -rotate-12 shadow-xl"
+          src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg"
+          alt=""
+        />
         {/* Center Card */}
-        <img className="w-[260px] h-[160px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl shadow-xl z-10" src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg"/>
+        <img
+          className="w-[260px] h-[160px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl shadow-xl z-10"
+          src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg"
+        />
         {/* Right Card */}
-        <img src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg" className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform rotate-12 shadow-xl"/>
+        <img
+          src="http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg"
+          className="w-[220px] h-[140px] bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform rotate-12 shadow-xl"
+        />
       </div>
 
       {/* Main Heading */}
@@ -65,23 +76,23 @@ function CardComponent() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-6 items-center">
           <div className="flex flex-col justify-start items-start text-white space-y-6 md:pr-8">
             <div className="space-y-9">
-              <h2 className="uppercase text-[60px] font-bold leading-[1.1] text-left font-primaryBold ">
+              <h2 className="uppercase text-[60px] font-bold leading-[1.1] text-left font-primaryBold">
                 A card customized for you
               </h2>
               <p className="text-lg font-bold leading-[1.4] tracking-[.3px] mb-0 text-left">
                 Your alloy metal card is laser-etched with your logo.
               </p>
             </div>
-            <a className=" text-black text-center uppercase w-full py-2.5 px-6 text-base font-semibold leading-tight transition-all duration-200 flex justify-center items-center md:w-auto lg:w-full cursor-pointer button-cardimg rounded-sm hover:opacity-80">
+            <a className="text-black text-center uppercase w-full py-2.5 px-6 text-base font-semibold leading-tight transition-all duration-200 flex justify-center items-center md:w-auto lg:w-full cursor-pointer button-cardimg rounded-sm hover:opacity-80">
               Apply Now
             </a>
           </div>
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center md:justify-start w-full">
             <img
-              src="https://cdn.prod.website-files.com/64319e85443cd280068e5fff/668e2eb1b9876982c0530cca_VISA%20WHITE%20large.webp"
+              src={cardImg}
               loading="lazy"
               alt="card"
-              className="max-w-full h-auto"
+              className="w-[1000px] h-[350px] translate-x-4 scale-[1.05] md:translate-x-6 md:scale-[1.1] drop-shadow-2xl"
             />
           </div>
         </div>

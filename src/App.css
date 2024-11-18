@@ -41,6 +41,7 @@ body {
   color: var(--black);
   background-image: url("https://cdn.prod.website-files.com/62c48d78ef34931f8a604ef5/62c490351ee26e719721025d_gradient-bg.png");
   background-position: 50% 0;
+  background-size: contain;
   background-repeat: no-repeat;
   line-height: 150%;
 }

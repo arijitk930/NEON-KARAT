@@ -6,9 +6,11 @@ import logo from "../assets/vanitylogos/bg2 ei_1730790038728-removebg-preview.pn
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+
   useEffect(() => {
     console.log(pathname);
   }, [pathname]);
+
   return (
     <nav className="backdrop-blur-md p-4 lg:px-8 flex justify-between items-center font-bold text-lg sticky top-0 z-50 transition-all duration-300 ease-in-out fade-in">
       <div className="flex items-center space-x-8">
@@ -59,7 +61,9 @@ const Navbar = () => {
       <div className="lg:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-black text-3xl focus:outline-none"
+          className={`text-black text-3xl focus:outline-none transition-transform duration-300 ${
+            menuOpen ? "rotate-90" : ""
+          }`}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
@@ -67,22 +71,22 @@ const Navbar = () => {
 
       {/* Mobile Menu links */}
       <ul
-        className={`lg:hidden absolute w-full left-0 top-16 bg-white border border-gray-200 shadow-lg transition-all duration-500 ease-in-out ${
-          menuOpen ? "block" : "hidden"
-        }`}
+        className={`absolute w-full left-0 top-16 bg-white border border-gray-200 shadow-lg transition-all duration-500 ease-in-out ${
+          menuOpen ? "opacity-100 max-h-screen" : "opacity-0 max-h-0"
+        } overflow-hidden`}
       >
         <li>
           <Link
             to="/insights"
-            className="block px-6 py-2 text-black hover:text-blue-600 transition-colors cursor-pointer"
+            className="block px-6 py-2 text-black hover:hover:text-[#ac73db] transition-colors cursor-pointer"
           >
             Insights
           </Link>
         </li>
         <li>
           <Link
-            to="/credit"
-            className="block px-6 py-2 text-black hover:text-blue-600 transition-colors cursor-pointer"
+            to="/credit-card"
+            className="block px-6 py-2 text-black hover:hover:text-[#ac73db] transition-colors cursor-pointer"
           >
             Credit Card
           </Link>
@@ -90,7 +94,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/socials"
-            className="block px-6 py-2 text-black hover:text-blue-600 transition-colors cursor-pointer"
+            className="block px-6 py-2 text-black hover:hover:text-[#ac73db] transition-colors cursor-pointer"
           >
             Socials
           </Link>
