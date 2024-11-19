@@ -1,25 +1,8 @@
 import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
-
-const images = [
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/pfgobyaztel9xqzppcbr.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/mrzfkiprwbbjc9dnjtf4.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/ytewgx6h9t9fnopke2vb.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/nakbxaymwvqyebkqgkr0.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805042/images/chq9ds9zd39gzxwagveb.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/eh4alxdqdqlqgtl51atu.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ltean7wjzhrobm3ii2ak.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ca5jrqtn7hyabavg68yg.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/kfc5u2twe6nyobdmqh9q.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/y2fkklj1mi9ic8vswnqt.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/qkqjctn9akyqi8tojm3c.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/ipnhwnnzvlasqvppnww6.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/b3tez3q9kxxmdaws6szi.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/fa5cpnenc0oaml4ddbdc.jpg",
-  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805041/images/exzqtgn9mtj5dcdia1s4.jpg",
-];
+import { modelImages } from "./data";
+const images = modelImages
 
 const Hero = () => {
   const [loadedImages, setLoadedImages] = useState([]);

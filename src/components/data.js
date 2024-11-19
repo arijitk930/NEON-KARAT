@@ -1,3 +1,44 @@
+import model1 from "../assets/model1.jpg"
+import model2 from "../assets/model2.jpg"
+import model3 from "../assets/model3.jpg"
+import model4 from "../assets/model4.jpg"
+import model5 from "../assets/model5.jpg"
+import model6 from "../assets/model6.png"
+import model7 from "../assets/model7.jpg"
+import model8 from "../assets/model8.jpg"
+import model9 from "../assets/model9.jpg"
+import model10 from "../assets/model10.jpg"
+import model11 from "../assets/model11.jpg"
+import model12 from "../assets/model12.png"
+import model13 from "../assets/model13.jpg"
+import model14 from "../assets/model14.png"
+import model15 from "../assets/model15.jpg"
+import model16 from "../assets/model16.jpg"
+import model17 from "../assets/model17.jpg"
+import model18 from "../assets/model18.jpg"
+import model19 from "../assets/model19.jpg"
+import model20 from "../assets/model20.jpg"
+
+const modelImages=[model1,
+    model2,
+    model3,
+    model4,
+    model5,
+    model6,
+    model7,
+    model8,
+    model9,
+    model10,
+    model11,
+    model12,
+    model13,
+    model14,
+    model15,
+    model16,
+    model17,
+    model18,
+    model19,
+    model20]
 const images = [
     'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/dyz5reebdq74vxqu3xsq.jpg',
     'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/w9zdu4vxqb7iebv8ysyk.jpg',
@@ -48,4 +89,4 @@ const videos = [
     'http://res.cloudinary.com/deus3nlcx/video/upload/v1730804692/videos/isgeqqtlaaxhd3wguyia.mp4',
 ]
 
-export {videos,images};
+export {videos,images,modelImages};

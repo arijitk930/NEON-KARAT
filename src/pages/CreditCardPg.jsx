@@ -1,7 +1,8 @@
 import CreditCard from "../components/CreditCard";
 import React, { useState } from "react";
 import TaxCommunity from "../components/TaxCommunity";
-import cardImg from "../assets/card-webp.webp";
+import cardImg from "../assets/card-png.png";
+
 
 export default function CreditCardPg() {
   return (
@@ -73,7 +74,7 @@ function CardComponent() {
   return (
     <section className="bg-blue-gray-800 relative overflow-hidden py-[5rem] px-8 md:px-16">
       <div className="w-3/4 max-w-full mx-auto pt-[5rem] pb-[5rem] pl-[2.55rem] pr-[2.5rem]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-6 items-center">
+        <div className="grid grid-cols-3 md:grid-cols-2 gap-x-32 gap-y-6 items-center">
           <div className="flex flex-col justify-start items-start text-white space-y-6 md:pr-8">
             <div className="space-y-9">
               <h2 className="uppercase text-[60px] font-bold leading-[1.1] text-left font-primaryBold">
@@ -87,14 +88,14 @@ function CardComponent() {
               Apply Now
             </a>
           </div>
-          <div className="flex justify-center md:justify-start w-full">
+          
             <img
               src={cardImg}
               loading="lazy"
               alt="card"
-              className="w-[1000px] h-[350px] translate-x-4 scale-[1.05] md:translate-x-6 md:scale-[1.1] drop-shadow-2xl"
+              className="w-[700px] h-[250px] ml-24 bg-gradient-to-br from-[#4a00e0] to-[#4504c3] rounded-xl transform rotate-12 shadow-xl"
             />
-          </div>
+          
         </div>
       </div>
     </section>
