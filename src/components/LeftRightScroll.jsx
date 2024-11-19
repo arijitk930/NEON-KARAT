@@ -1,43 +1,45 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
 import { modelImages } from "./data";
 
 const topVideos = [
   "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/dyz5reebdq74vxqu3xsq.jpg",
   "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805046/images/uh2lf5mwf3a2bnkikdb2.jpg",
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/eh4alxdqdqlqgtl51atu.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ltean7wjzhrobm3ii2ak.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ca5jrqtn7hyabavg68yg.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg',
-  'http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/kfc5u2twe6nyobdmqh9q.jpg',
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805044/images/eh4alxdqdqlqgtl51atu.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ltean7wjzhrobm3ii2ak.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/ca5jrqtn7hyabavg68yg.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/cprnn758xh2futb5skz5.jpg",
+  "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805043/images/kfc5u2twe6nyobdmqh9q.jpg",
   "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/txinllbh67wqveducklr.jpg",
   "http://res.cloudinary.com/deus3nlcx/image/upload/v1730805045/images/sfcstmoh7ktuj9jv6tgw.jpg",
 ];
 
-const bottomVideos = modelImages
-
 const LeftRightScroll = () => {
-  const [tImg, setTimg] = useState([]);
-  const [bImg, setBimg] = useState([]);
-
-  // Load images only once on component mount
-  useEffect(() => {
-    setBimg(bottomVideos);
-    setTimg(topVideos);
-  }, [bottomVideos, topVideos]);
+  // Optimize image URLs using Cloudinary transformations
+  const optimizedTopVideos = useMemo(
+    () =>
+      topVideos.map((url) => url.replace("/upload/", "/upload/q_auto,f_auto/")),
+    []
+  );
+  const optimizedBottomVideos = useMemo(
+    () =>
+      modelImages.map((url) =>
+        url.replace("/upload/", "/upload/q_auto,f_auto/")
+      ),
+    []
+  );
 
   return (
     <div className="min-h-screen video-scroll text-white flex flex-col items-center justify-center gap-8 overflow-hidden py-20">
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
-          <Marquee speed={50} className="w-full ">
-            {" "}
+          <Marquee speed={30} className="w-full">
             {/* Reduced speed */}
-            {tImg.map((url, index) => (
+            {optimizedTopVideos.map((url, index) => (
               <img
                 key={`top-${index}`}
                 src={url}
-                className="h-48 w-72 object-cover rounded-lg mx-6  opacity-65"
+                className="h-48 w-72 object-cover rounded-lg mx-6 opacity-65"
                 alt={`Concert ${index + 1}`}
                 loading="lazy"
               />
@@ -52,14 +54,13 @@ const LeftRightScroll = () => {
 
       <div className="relative w-full overflow-hidden">
         <div className="flex items-center">
-          <Marquee speed={50} direction="right" className="w-full">
-            {" "}
+          <Marquee speed={30} direction="right" className="w-full">
             {/* Reduced speed */}
-            {bImg.map((url, index) => (
+            {optimizedBottomVideos.map((url, index) => (
               <img
                 key={`bottom-${index}`}
                 src={url}
-                className="h-48 w-72 object-cover rounded-lg mx-6  opacity-65"
+                className="h-48 w-72 object-cover rounded-lg mx-6 opacity-65"
                 alt={`Concert ${index + 7}`}
                 loading="lazy"
               />
