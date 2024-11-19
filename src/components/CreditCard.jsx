@@ -169,7 +169,7 @@ const CreditCard = ({ theme = "dark" }) => {
                 </Link>
               </div>
               <br />
-              <p className="w-full text-white text-sm">
+              <p className="w-full text-gray-800 font-bold text-sm">
                 VanityCard is a financial technology company and not a bank. The
                 VanityCard Visa®️ Business Credit Card is issued by Cross River
                 Bank, Member FDIC, and pursuant to a license from Visa️ USA.
