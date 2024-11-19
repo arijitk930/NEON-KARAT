@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"; // Ensure this is correct
 import { Link } from "react-router-dom";
-import business from '../assets/business.jpg'
+import business from "../assets/business.jpg";
 const data = [
   {
     normal: "Make more ",
@@ -44,12 +44,7 @@ const data = [
     visualization: (
       <div className="relative">
         <div className="w-full h-96 rounded-sm border-white overflow-hidden">
-          <img
-            src={business} 
-            autoPlay
-            loop
-            className=" w-full"
-          />
+          <img src={business} autoPlay className=" w-full" />
         </div>
       </div>
     ),
@@ -78,17 +73,25 @@ const themeClasses = {
 export default function Insights() {
   const [activeCard, setActiveCard] = useState(0);
   const sectionsRef = useRef([]);
+  const timerRef = useRef(null);
 
+  // Automatically cycle through cards
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveCard((prev) => (prev + 1) % data.length); // Cycle to the next section
-    }, 5000); // Change the interval time as needed (5000ms = 5 seconds)
+    startAutoCycle();
 
-    return () => clearInterval(timer); // Clear the timer on component unmount
+    return () => clearInterval(timerRef.current); // Clean up the interval on unmount
   }, []);
+
+  const startAutoCycle = () => {
+    clearInterval(timerRef.current); // Clear any existing interval
+    timerRef.current = setInterval(() => {
+      setActiveCard((prev) => (prev + 1) % data.length);
+    }, 5000); // 5000ms interval; change as needed
+  };
 
   const handleCardClick = (index) => {
     setActiveCard(index);
+    startAutoCycle(); // Restart cycle when user clicks
   };
 
   return (
@@ -109,8 +112,9 @@ export default function Insights() {
                 <div
                   key={index}
                   ref={(el) => (sectionsRef.current[index] = el)}
-                  className={`transition-all duration-500 cursor-pointer rounded-lg ${activeCard === index ? "opacity-100" : "opacity-50"
-                    }`}
+                  className={`transition-all duration-500 cursor-pointer rounded-lg ${
+                    activeCard === index ? "opacity-100" : "opacity-50"
+                  }`}
                   style={{
                     transform:
                       activeCard === index
@@ -120,8 +124,9 @@ export default function Insights() {
                   onClick={() => handleCardClick(index)} // Click handler to activate card
                 >
                   <div
-                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${themeClasses.light.title
-                      } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
+                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
+                      themeClasses.light.title
+                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                   >
                     <span>{item.normal}</span>
                     <span className={themeClasses.light.highlight}>
@@ -154,7 +159,7 @@ export default function Insights() {
               ))}
               <Link
                 to="/register"
-                className="button-insights text-black h-15 w-full rounded-md text-lg transition duration-300 hover:border-2 hover:border-purple-700 font-bold text-center"
+                className="button text-black h-15 w-full rounded-md text-lg transition duration-300  font-bold text-center"
               >
                 GET STARTED
               </Link>
