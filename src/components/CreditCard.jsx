@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import wow from '../assets/wow.jpg'
 const content = [
   {
     normal: "Limit based on ",
@@ -43,8 +44,8 @@ const content = [
     visualization: (
       <div className="relative">
         <div className="w-full h-full rounded-sm bg-gray-200 border-2 border-white overflow-hidden">
-          <video
-            src="http://res.cloudinary.com/deus3nlcx/video/upload/v1730804781/videos/ubkzmmooudplehpblgef.mp4"
+          <img
+            src={wow}
             autoPlay
             loop
             alt={`Profile`}

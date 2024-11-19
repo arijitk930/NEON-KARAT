@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"; // Ensure this is correct
 import { Link } from "react-router-dom";
-
+import business from '../assets/business.jpg'
 const data = [
   {
     normal: "Make more ",
@@ -44,11 +44,11 @@ const data = [
     visualization: (
       <div className="relative">
         <div className="w-full h-96 rounded-sm border-white overflow-hidden">
-          <video
-            src="http://res.cloudinary.com/deus3nlcx/video/upload/v1730804739/videos/ck16jt8vvloutihoqwtb.mp4"
+          <img
+            src={business} 
             autoPlay
             loop
-            className="h-96"
+            className=" w-full"
           />
         </div>
       </div>
@@ -109,9 +109,8 @@ export default function Insights() {
                 <div
                   key={index}
                   ref={(el) => (sectionsRef.current[index] = el)}
-                  className={`transition-all duration-500 cursor-pointer rounded-lg ${
-                    activeCard === index ? "opacity-100" : "opacity-50"
-                  }`}
+                  className={`transition-all duration-500 cursor-pointer rounded-lg ${activeCard === index ? "opacity-100" : "opacity-50"
+                    }`}
                   style={{
                     transform:
                       activeCard === index
@@ -121,9 +120,8 @@ export default function Insights() {
                   onClick={() => handleCardClick(index)} // Click handler to activate card
                 >
                   <div
-                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${
-                      themeClasses.light.title
-                    } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
+                    className={`text-left text-2xl md:text-3xl lg:text-[30px] font-bold mb-2 transition-opacity duration-300 ${themeClasses.light.title
+                      } ${activeCard === index ? "opacity-100" : "opacity-50"}`}
                   >
                     <span>{item.normal}</span>
                     <span className={themeClasses.light.highlight}>
